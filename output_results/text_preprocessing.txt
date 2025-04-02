@@ -7,7 +7,7 @@ Sample NLP Text
 
 
 Hello there! I'm learning NLP techniques at 5:00PM. It's awesome, isn't it?!!! 
-    The dog is in the yard and it is waiting for someone with a toy.
+    The dog is in the yard and it is waiting for someone with a fancier toy.
 
 
 
@@ -20,18 +20,18 @@ sample nlp text
 
 
 hello there! i'm learning nlp techniques at 5:00pm. it's awesome, isn't it?!!! 
-    the dog is in the yard and it is waiting for someone with a toy.
+    the dog is in the yard and it is waiting for someone with a fancier toy.
 
 
 
 
-Tokens: ['sample', 'nlp', 'text', 'hello', 'there', '!', 'i', "'m", 'learning', 'nlp', 'techniques', 'at', '5:00pm', '.', 'it', "'s", 'awesome', ',', 'is', "n't", 'it', '?', '!', '!', '!', 'the', 'dog', 'is', 'in', 'the', 'yard', 'and', 'it', 'is', 'waiting', 'for', 'someone', 'with', 'a', 'toy', '.']
+Tokens: ['sample', 'nlp', 'text', 'hello', 'there', '!', 'i', "'m", 'learning', 'nlp', 'techniques', 'at', '5:00pm', '.', 'it', "'s", 'awesome', ',', 'is', "n't", 'it', '?', '!', '!', '!', 'the', 'dog', 'is', 'in', 'the', 'yard', 'and', 'it', 'is', 'waiting', 'for', 'someone', 'with', 'a', 'fancier', 'toy', '.']
 
-No Stopwords: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', 'techniques', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'waiting', 'someone', 'toy', '.']
+No Stopwords: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', 'techniques', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'waiting', 'someone', 'fancier', 'toy', '.']
 
-Stemmed: ['sampl', 'nlp', 'text', 'hello', '!', "'m", 'learn', 'nlp', 'techniqu', '5:00pm', '.', "'s", 'awesom', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'wait', 'someon', 'toy', '.']
+Stemmed: ['sampl', 'nlp', 'text', 'hello', '!', "'m", 'learn', 'nlp', 'techniqu', '5:00pm', '.', "'s", 'awesom', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'wait', 'someon', 'fancier', 'toy', '.']
 
-Lemmatized: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', 'technique', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'waiting', 'someone', 'toy', '.']
+Lemmatized: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', 'technique', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'waiting', 'someone', 'fancier', 'toy', '.']
 
 No Punctuation: 
 
@@ -41,14 +41,14 @@ sample nlp text
 
 
 hello there im learning nlp techniques at 500pm its awesome isnt it 
-    the dog is in the yard and it is waiting for someone with a toy
+    the dog is in the yard and it is waiting for someone with a fancier toy
 
 
 
 
 Spell Corrected: I am leaning NLP and it is some
 
-Sentences: ['\n\n\n\nSample NLP Text\n\n\nHello there!', "I'm learning NLP techniques at 5:00PM.", "It's awesome, isn't it?!!!", 'The dog is in the yard and it is waiting for someone with a toy.']
+Sentences: ['\n\n\n\nSample NLP Text\n\n\nHello there!', "I'm learning NLP techniques at 5:00PM.", "It's awesome, isn't it?!!!", 'The dog is in the yard and it is waiting for someone with a fancier toy.']
 
 Detected Date/Time entities:
 5:00PM -> TIME
