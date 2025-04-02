@@ -1,4 +1,7 @@
+
+nltk==3.8.1
 spacy==3.7.2
 textblob==0.17.1
-nltk==3.8.1
+beautifulsoup4==4.12.3
 transformers==4.39.3
+torch  # Needed by transformers
