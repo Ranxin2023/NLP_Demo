@@ -1,0 +1,41 @@
+Semantics Challenge Example:
+He - PRON - he
+saw - VERB - see
+a - DET - a
+bat - NOUN - bat
+in - ADP - in
+the - DET - the
+dark - NOUN - dark
+. - PUNCT - .
+
+Ambiguity Challenge (Sentiment): Sentiment(polarity=0.0, subjectivity=0.0)
+
+Context Challenge (Coreference not handled by spaCy by default):
+Alex - nsubj - told
+told - ROOT - told
+Jordan - dobj - told
+that - mark - win
+he - nsubj - win
+would - aux - win
+win - ccomp - told
+. - punct - told
+
+Language Diversity (English model struggles with Hindi):
+मैं - NUM
+घर - PROPN
+जा - PROPN
+रहा - PROPN
+हूँ - NOUN
+। - NOUN
+
+Bias Challenge (Gender bias in pronoun resolution):
+The - det - nurse
+nurse - nsubj - helped
+helped - ROOT - helped
+the - det - doctor
+doctor - dobj - helped
+because - mark - was
+she - nsubj - was
+was - advcl - helped
+tired - acomp - was
+. - punct - helped

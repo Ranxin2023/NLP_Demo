@@ -7,7 +7,7 @@ __pycache__/
 .vscode/
 
 # Output logs and results
-output_results/
+# output_results/
 
 # Virtual environment
 env/

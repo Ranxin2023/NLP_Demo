@@ -1,0 +1,22 @@
+Text Classification: [{'label': 'POSITIVE', 'score': 0.9998643398284912}]
+Named Entities:
+Barack Obama -> PERSON
+Hawaii -> GPE
+the United States -> GPE
+
+--- POS Tags ---
+Barack -> PROPN
+Obama -> PROPN
+was -> AUX
+born -> VERB
+in -> ADP
+Hawaii -> PROPN
+and -> CCONJ
+became -> VERB
+the -> DET
+president -> NOUN
+of -> ADP
+the -> DET
+United -> PROPN
+States -> PROPN
+. -> PUNCT
