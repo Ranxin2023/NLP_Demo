@@ -31,7 +31,7 @@ No Stopwords: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', '
 
 Stemmed: ['sampl', 'nlp', 'text', 'hello', '!', "'m", 'learn', 'nlp', 'techniqu', '5:00pm', '.', "'s", 'awesom', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'wait', 'someon', 'fancier', 'toy', '.']
 
-Lemmatized: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learning', 'nlp', 'technique', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'waiting', 'someone', 'fancier', 'toy', '.']
+Lemmatized: ['sample', 'nlp', 'text', 'hello', '!', "'m", 'learn', 'nlp', 'technique', '5:00pm', '.', "'s", 'awesome', ',', "n't", '?', '!', '!', '!', 'dog', 'yard', 'wait', 'someone', 'fancy', 'toy', '.']
 
 No Punctuation: 
 

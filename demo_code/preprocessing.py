@@ -2,7 +2,7 @@ import re
 import spacy
 from bs4 import BeautifulSoup
 from contextlib import redirect_stdout
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords, wordnet
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from textblob import TextBlob
@@ -52,8 +52,28 @@ def preprocessing_demo():
             print("\nStemmed:", stemmed)
 
             # 6. Lemmatization
+            # Helper to convert POS tag to WordNet format
+            from nltk import pos_tag
+            # from nltk.corpus import wordnet
+            def get_wordnet_pos(tag):
+                if tag.startswith('J'):
+                    return wordnet.ADJ
+                elif tag.startswith('V'):
+                    return wordnet.VERB
+                elif tag.startswith('N'):
+                    return wordnet.NOUN
+                elif tag.startswith('R'):
+                    return wordnet.ADV
+                else:
+                    return wordnet.NOUN  # default to noun
             lemmatizer = WordNetLemmatizer()
-            lemmatized = [lemmatizer.lemmatize(word) for word in filtered_tokens]
+            tagged_tokens = pos_tag(filtered_tokens)  # Get POS tags
+
+            lemmatized = [
+                lemmatizer.lemmatize(word, get_wordnet_pos(pos))
+                for word, pos in tagged_tokens
+            ]
+
             '''
              Words are normalized to their dictionary (lemma) forms:
 
