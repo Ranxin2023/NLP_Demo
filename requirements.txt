@@ -1,0 +1,4 @@
+spacy==3.7.2
+textblob==0.17.1
+nltk==3.8.1
+transformers==4.39.3
