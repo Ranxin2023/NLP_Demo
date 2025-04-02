@@ -1,0 +1,21 @@
+Original Text:
+ The cats are playing at 5:00PM on 2024-04-02. NLP is fun, and 100 people agree!
+
+1. Lowercased:
+ the cats are playing at 5:00pm on 2024-04-02. nlp is fun, and 100 people agree!
+
+2. Lemmatized:
+ the cat be play at 5:00pm on 2024 - 04 - 02 . nlp be fun , and 100 people agree !
+
+3. Stemmed:
+ the cat are play at 5:00pm on 2024-04-02. nlp is fun , and 100 peopl agre !
+
+4. Abbreviation Expanded:
+ the cats are playing at 5:00pm on 2024-04-02. Natural Language Processing is fun, and 100 people agree!
+
+5. Numerical Normalization:
+ the cats are playing at 5:00pm on 2024-04-02. nlp is fun, and one hundred people agree!
+
+6. Detected Date/Time entities:
+5:00pm -> TIME
+2024-04-02 -> DATE

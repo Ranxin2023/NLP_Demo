@@ -6,6 +6,7 @@ from nltk.corpus import stopwords, wordnet
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from textblob import TextBlob
+
 def preprocessing_demo():
     with open("./output_results/text_preprocessing.txt", "w", encoding="utf-8") as f:
         with redirect_stdout(f):
@@ -75,7 +76,7 @@ def preprocessing_demo():
             ]
 
             '''
-             Words are normalized to their dictionary (lemma) forms:
+            Words are normalized to their dictionary (lemma) forms:
 
             techniques → technique
 
