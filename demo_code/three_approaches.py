@@ -1,4 +1,4 @@
-
+from contextlib import redirect_stdout
 def rule_based():
     import re
 
@@ -13,7 +13,13 @@ def statistical_based():
 
     X_train = ["I love this product", "This is terrible", "Absolutely fantastic", "Worst experience ever"]
     y_train = ["positive", "negative", "positive", "negative"]
+    '''
+    CountVectorizer is a class from scikit-learn (sklearn.feature_extraction.text) that converts a collection of text documents into a matrix of token counts.
 
+    In other words:
+
+    It transforms raw text into a numerical format that a machine learning model can understand.
+    '''
     vectorizer = CountVectorizer()
     X_vect = vectorizer.fit_transform(X_train)
 
@@ -34,6 +40,8 @@ def neural_based_approach():
     print("Neural-Based Prediction:", result)
 
 def three_processing_approach():
-    rule_based()
-    statistical_based()
-    neural_based_approach()
+    with open("./output_results/three_approach_result.txt", "w", encoding="utf-8") as f:
+        with redirect_stdout(f):
+            rule_based()
+            statistical_based()
+            neural_based_approach()

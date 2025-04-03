@@ -1,0 +1,3 @@
+Rule-Based Extracted Emails: ['support@example.com', 'hr@example.org']
+Statistical Prediction: negative
+Neural-Based Prediction: [{'label': 'POSITIVE', 'score': 0.9998694658279419}]
