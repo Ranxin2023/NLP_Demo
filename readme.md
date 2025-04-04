@@ -29,3 +29,32 @@ NLPDEMO/
 └── README.md                      # You're here!
 
 ```
+
+## NLP Concepts
+1. What is NLP?
+Natural Language Processing (NLP) is a subfield of Artificial Intelligence that focuses on the interaction between computers and human language. It enables machines to understand, interpret, and generate natural language in a way that is meaningful. NLP encompasses tasks such as translation, sentiment analysis, question answering, and more.
+
+2. What are the main challenges in NLP?
+
+4. What are some common preprocessing techniques used in NLP?
+    - Tokenization: Splitting text into words or phrases.
+
+    - Stop Word Removal: Removing common, less informative words.
+
+    - Text Normalization:
+
+        - Lowercasing
+
+        - Lemmatization
+
+        - Stemming
+
+        - Date/Time normalization
+
+    - Punctuation/Special Character Removal
+
+    - HTML Tag Removal
+
+    - Spell Correction
+
+    - Sentence Segmentation
