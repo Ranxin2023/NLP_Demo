@@ -5,6 +5,7 @@ from nltk import pos_tag
 from nltk import CFG
 from nltk.parse.generate import generate
 from contextlib import redirect_stdout
+
 def sentence_tokenization_demo():
     print("word tokenization function:")
     text = "NLTK is a great tool for NLP. It simplifies text processing!"

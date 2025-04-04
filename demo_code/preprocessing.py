@@ -6,6 +6,54 @@ from nltk.corpus import stopwords, wordnet
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from textblob import TextBlob
+def stemming(filtered_tokens):
+    
+    stemmer = PorterStemmer()
+    stemmed = [stemmer.stem(word) for word in filtered_tokens]
+    '''
+    Words are reduced to their base root forms:
+
+    learning → learn
+
+    techniques → techniqu
+
+    waiting → wait
+
+    someone → someon
+    '''
+    print("\nStemmed:", stemmed)
+
+def lemmatization(filtered_tokens):
+    # Helper to convert POS tag to WordNet format
+    from nltk import pos_tag
+    # from nltk.corpus import wordnet
+    def get_wordnet_pos(tag):
+        if tag.startswith('J'):
+            return wordnet.ADJ
+        elif tag.startswith('V'):
+            return wordnet.VERB
+        elif tag.startswith('N'):
+            return wordnet.NOUN
+        elif tag.startswith('R'):
+            return wordnet.ADV
+        else:
+            return wordnet.NOUN  # default to noun
+    lemmatizer = WordNetLemmatizer()
+    tagged_tokens = pos_tag(filtered_tokens)  # Get POS tags
+
+    lemmatized = [
+                lemmatizer.lemmatize(word, get_wordnet_pos(pos))
+                for word, pos in tagged_tokens
+            ]
+
+    '''
+    Words are normalized to their dictionary (lemma) forms:
+
+    techniques → technique
+
+    waiting stays waiting (already base form)
+    '''
+    print("\nLemmatized:", lemmatized)
 
 def preprocessing_demo():
     with open("./output_results/text_preprocessing.txt", "w", encoding="utf-8") as f:
@@ -37,52 +85,10 @@ def preprocessing_demo():
             print("\nNo Stopwords:", filtered_tokens)
 
             # 5. Stemming
-            stemmer = PorterStemmer()
-            stemmed = [stemmer.stem(word) for word in filtered_tokens]
-            '''
-            Words are reduced to their base root forms:
-
-            learning → learn
-
-            techniques → techniqu
-
-            waiting → wait
-
-            someone → someon
-            '''
-            print("\nStemmed:", stemmed)
+            stemming(filtered_tokens=filtered_tokens)
 
             # 6. Lemmatization
-            # Helper to convert POS tag to WordNet format
-            from nltk import pos_tag
-            # from nltk.corpus import wordnet
-            def get_wordnet_pos(tag):
-                if tag.startswith('J'):
-                    return wordnet.ADJ
-                elif tag.startswith('V'):
-                    return wordnet.VERB
-                elif tag.startswith('N'):
-                    return wordnet.NOUN
-                elif tag.startswith('R'):
-                    return wordnet.ADV
-                else:
-                    return wordnet.NOUN  # default to noun
-            lemmatizer = WordNetLemmatizer()
-            tagged_tokens = pos_tag(filtered_tokens)  # Get POS tags
-
-            lemmatized = [
-                lemmatizer.lemmatize(word, get_wordnet_pos(pos))
-                for word, pos in tagged_tokens
-            ]
-
-            '''
-            Words are normalized to their dictionary (lemma) forms:
-
-            techniques → technique
-
-            waiting stays waiting (already base form)
-            '''
-            print("\nLemmatized:", lemmatized)
+            lemmatization(filtered_tokens=filtered_tokens)
 
             # 7. Remove Punctuation & Special Characters
             text_no_punct = re.sub(r'[^\w\s]', '', text_lower)

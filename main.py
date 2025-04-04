@@ -7,6 +7,8 @@ from demo_code.nlp_tasks import nlp_tasks
 from demo_code.preprocessing import preprocessing_demo
 from demo_code.text_normalization import text_normalizaion_demo
 from demo_code.three_approaches import three_processing_approach
+from demo_code.nltk_demo import nltk_demo
+
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
