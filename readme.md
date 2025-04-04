@@ -58,3 +58,35 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
     - Spell Correction
 
     - Sentence Segmentation
+
+6. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
+- **Rule-Based Approach:**
+
+    - Uses manually crafted linguistic rules.
+
+    - Highly interpretable, but hard to scale.
+
+    - Good for simple patterns (e.g., regex email extraction).
+
+- **Statistical-Based Approach:**
+
+    - Learns from statistical patterns in labeled data.
+
+    - Example: Naive Bayes for sentiment classification.
+
+    - Flexible and scalable with enough data.
+
+- **Neural-Based Approach:**
+
+    - Uses deep learning models like BERT, GPT.
+
+    - Learns hierarchical language features automatically.
+
+    - High performance, especially with large datasets.
+    
+## Setup
+```sh
+pip install -r requirements.txt
+python -m nltk.downloader all
+python -m spacy download en_core_web_sm
+```
