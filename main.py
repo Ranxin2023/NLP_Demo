@@ -8,7 +8,7 @@ from demo_code.preprocessing import preprocessing_demo
 from demo_code.text_normalization import text_normalizaion_demo
 from demo_code.three_approaches import three_processing_approach
 from demo_code.nltk_demo import nltk_demo
-
+from demo_code.cos_similarity_examples import cos_sililarity_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -32,7 +32,8 @@ def main():
     # nlp_tasks()
     # preprocessing_demo()
     # text_normalizaion_demo()
-    three_processing_approach()
+    # three_processing_approach()
+    cos_sililarity_demo()
     
 if __name__=='__main__':
     main()
