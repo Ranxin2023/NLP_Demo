@@ -1,0 +1,14 @@
+word tokenization function:
+Words: ['NLTK', 'is', 'a', 'great', 'tool', 'for', 'NLP', '.', 'It', 'simplifies', 'text', 'processing', '!']
+steming the words function:
+Stemmed Words: ['run', 'ran', 'run', 'easili', 'fairli', 'appreci', 'better', 'unfortun', 'simutan', 'success']
+lemmatization the words function:
+Lemmatized Words: ['run', 'run', 'run', 'better', 'easily']
+part of speech demo
+POS Tags of sentence 'NLTK helps in text processing':
+[('NLTK', 'NNP'), ('helps', 'VBZ'), ('in', 'IN'), ('text', 'NN'), ('processing', 'NN')]
+the cat chased the cat
+the cat chased the dog
+the cat caught the cat
+the cat caught the dog
+the dog chased the cat

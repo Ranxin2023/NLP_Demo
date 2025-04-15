@@ -83,7 +83,31 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
     - Learns hierarchical language features automatically.
 
     - High performance, especially with large datasets.
-    
+
+7. What is the **Bag-of-Words (BoW)** Model? 
+BoW is one of the simplest and most widely used techniques to convert text into numerical feature vectors.
+How It Works (Step-by-Step):
+- **Tokenization**:
+Break the sentence into words (tokens).
+Example:
+```python
+"I love apples." → ['I', 'love', 'apples']
+```
+- **Vocabulary Creation**:
+Collect all unique words across all documents.
+Example:
+```python
+["I love apples.", "I love mangoes too."] → Vocabulary: ['I', 'love', 'apples', 'mangoes', 'too']
+```
+- **Vectorization**:
+Turn each document into a vector of word counts from the vocabulary.
+Each dimension of the vector corresponds to a word in the vocabulary.
+Example: 
+```python
+Doc1: "I love apples."   → [1, 1, 1, 0, 0]
+Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
+
+```
 ## Setup
 ```sh
 pip install -r requirements.txt
