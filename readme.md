@@ -4,29 +4,34 @@ This project is a hands-on demo of various Natural Language Processing (NLP) tec
 
 ## Project Structure
 ```graphql
-NLPDEMO/
-│
-├── datasets/                      # Contains input HTML files
-│   └── text_preprocessing.html
-│
-├── demo_code/                     # Source code for different NLP topics
-│   ├── nlp_challenges.py
-│   ├── nlp_tasks.py
-│   ├── nltk_demo.py
-│   ├── preprocessing.py
-│   ├── text_normalization.py
-│   └── three_approaches.py
-│
-├── output_results/               # Auto-generated result files
+NLPMDEMO/
+├── datasets/
+│   └── text_preprocessing.html               # HTML resource for preprocessing
+├── demo_code/                                # All demo Python scripts
+│   ├── __pycache__/
+│   ├── cos_similarity_examples.py            # Cosine similarity demo
+│   ├── nlp_challenges.py                     # Challenges in NLP
+│   ├── nlp_tasks.py                          # Common NLP tasks
+│   ├── nltk_demo.py                          # NLTK-based parsing demo
+│   ├── parsing_demo.py                       # Constituency & dependency parsing
+│   ├── preprocessing.py                      # Text preprocessing pipeline
+│   ├── text_normalization.py                 # Normalization: lowercase, stemming, etc.
+│   ├── tf_idf_demo.py                        # TF-IDF demonstration
+│   └── three_approaches.py                   # Top-down, bottom-up, constituency parsing
+├── output_results/                           # Output files from the demos
+│   ├── cos_similarity_demo.txt
 │   ├── nlp_challenges.txt
 │   ├── nlp_tasks.txt
+│   ├── nltk_demo.txt
+│   ├── parsing_result.txt
 │   ├── text_normalization.txt
 │   ├── text_preprocessing.txt
 │   └── three_approach_result.txt
-│
-├── main.py                        # Main entry point to run modules
-├── requirements.txt               # Project dependencies
-└── README.md                      # You're here!
+├── .gitignore                                # Git ignore file
+├── main.py                                   # Optional entry point script
+├── README.md                                 # Project overview
+└── requirements.txt                          # Python dependencies
+
 
 ```
 
@@ -177,8 +182,18 @@ S
 ```
 
 ## Setup
+1. clone the repository
+```sh
+git clone https://github.com/Ranxin2023/NLP_Demo
+```
+2. install the requirement
 ```sh
 pip install -r requirements.txt
+
+```
+3. Open a python shell
+```sh
 python -m nltk.downloader all
 python -m spacy download en_core_web_sm
-```
+python -m benepar.download_en3
+``` 
