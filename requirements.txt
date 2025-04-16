@@ -4,4 +4,5 @@ spacy==3.7.2
 textblob==0.17.1
 beautifulsoup4==4.12.3
 transformers==4.39.3
-torch  # Needed by transformers
+torch>=2.0.0     # Needed by transformers
+benepar==0.2.0        # For constituency parsing with spaCy

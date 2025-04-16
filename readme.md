@@ -108,6 +108,74 @@ Doc1: "I love apples."   → [1, 1, 1, 0, 0]
 Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
 
 ```
+- **Top-Down Parsing**:
+
+8.  What are the different types of parsing in NLP?
+Constituency Parsing, Dependency Parsing, Top-down Parsing, Bottom-up Parsing
+- **Constituency Parsing:**
+Constituency parsing breaks down a sentence into nested phrases (or constituents) using a context-free grammar (CFG). The output is a tree where:
+    - Leaf nodes = actual words
+    - Internal nodes = grammatical phrases (like NP, VP)
+
+```yaml
+S
+├── NP (Noun Phrase)
+│   ├── DT: The
+│   └── NN: cat
+├── VP (Verb Phrase)
+│   ├── VBD: sat
+│   └── PP (Prepositional Phrase)
+│       ├── IN: on
+│       └── NP
+│           ├── DT: the
+│           └── NN: mat
+
+```
+- **Dependency Parsing:**
+Dependency parsing builds a directed graph where:
+
+Each word in a sentence depends on another word
+
+It shows grammatical relations (like subject → verb, verb → object)
+
+```markdown
+| **Word** | **Head** | **Relation**                        |
+|----------|----------|-------------------------------------|
+| The      | cat      | determiner (det)                    |
+| cat      | sat      | nominal subject (nsubj)             |
+| sat      | ROOT     | main verb                           |
+| on       | sat      | preposition (prep)                  |
+| the      | mat      | determiner                          |
+| mat      | on       | object of preposition (pobj)        |
+
+```
+- **Top-Down Parsing**:
+Top-down parsing starts at the root of the parse tree (S = Sentence) and recursively applies grammar rules to predict what should come next (i.e., expand S → NP + VP).
+Starts at root → breaks into sub-parts recursively
+
+Example:
+```mathematica
+S → NP VP
+NP → Det N
+VP → V PP
+PP → P NP
+
+```
+```yaml
+S
+├── NP
+│   ├── Det: The
+│   └── N: cat
+└── VP
+    ├── V: sat
+    └── PP
+        ├── P: on
+        └── NP
+            ├── Det: the
+            └── N: mat
+
+```
+
 ## Setup
 ```sh
 pip install -r requirements.txt

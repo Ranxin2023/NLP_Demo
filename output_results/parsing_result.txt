@@ -1,0 +1,20 @@
+Dependency Parsing...
+The        → Head: cat        | Dep: det
+cat        → Head: sat        | Dep: nsubj
+sat        → Head: sat        | Dep: ROOT
+on         → Head: sat        | Dep: prep
+the        → Head: mat        | Dep: det
+mat        → Head: on         | Dep: pobj
+.          → Head: sat        | Dep: punct
+Constituency Parsing...
+(S (NP (DT The) (NN cat)) (VP (VBD sat) (PP (IN on) (NP (DT the) (NN mat)))) (. .))
+Top Down Bottom Up Parsing
+Top-Down Parsing:
+(S
+  (NP (DT the) (N cat))
+  (VP (V sat) (PP (P on) (NP (DT the) (N mat)))))
+
+Bottom-Up Parsing:
+(S
+  (NP (DT the) (N cat))
+  (VP (V sat) (PP (P on) (NP (DT the) (N mat)))))
