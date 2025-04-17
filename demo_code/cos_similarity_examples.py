@@ -10,7 +10,8 @@ def example1():
     "The quick brown fox jumps over the lazy dog.",
     "A quick brown dog outpaces a fast fox.",
     ]
-
+    print(f"sentences0 :{sentences[0]}")
+    print(f"sentences1 :{sentences[1]}")
     vectorizer = TfidfVectorizer()
     tfidf = vectorizer.fit_transform(sentences)
 
@@ -29,7 +30,9 @@ def example2():
 
     sim_0_1 = cosine_similarity(tfidf[0:1], tfidf[1:2])[0][0]
     sim_0_2 = cosine_similarity(tfidf[0:1], tfidf[2:3])[0][0]
-
+    print(f"doc0:{documents[0]}")
+    print(f"doc1:{documents[1]}")
+    print(f"doc2:{documents[2]}")
     print(f"Similarity between Doc 0 and 1 (same topic): {sim_0_1:.4f}")
     print(f"Similarity between Doc 0 and 2 (different topic): {sim_0_2:.4f}")
 def example3():
@@ -39,7 +42,9 @@ def example3():
         "Machine learning is awesome!",
         "Machine learning is very interesting."
     ]
-
+    print(f"text 0: {texts[0]}")
+    print(f"text 1: {texts[1]}")
+    print(f"text 2: {texts[2]}")
     tfidf = TfidfVectorizer().fit_transform(texts)
 
     print("Sim(text 0, text 1):", cosine_similarity(tfidf[0:1], tfidf[1:2])[0][0])

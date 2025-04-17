@@ -1,6 +1,11 @@
 example 1...
+sentences0 :The quick brown fox jumps over the lazy dog.
+sentences1 :A quick brown dog outpaces a fast fox.
 Cosine Similarity: 0.3360
 example2...
+doc0:I love deep learning and neural networks.
+doc1:Convolutional networks are a type of deep learning model.
+doc2:I play football every weekend with my friends.
 Similarity between Doc 0 and 1 (same topic): 0.3073
 Similarity between Doc 0 and 2 (different topic): 0.0000
 example3...
