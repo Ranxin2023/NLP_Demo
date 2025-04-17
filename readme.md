@@ -113,7 +113,8 @@ Doc1: "I love apples."   → [1, 1, 1, 0, 0]
 Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
 
 ```
-- **Top-Down Parsing**:
+- **Why Use BoW?**:
+BoW transforms human language into a form that machine learning models can understand.
 
 ### 8. What are the different types of parsing in NLP?
 Constituency Parsing, Dependency Parsing, Top-down Parsing, Bottom-up Parsing
@@ -180,8 +181,46 @@ S
             └── N: mat
 
 ```
-### 9. What is TF-IDF in NLP?
 
+### 9. What is TF-IDF in NLP?
+**TF-IDF** stands for:
+
+- TF: Term Frequency
+
+- IDF: Inverse Document Frequency
+
+TF-IDF is a way to numerically represent text data — used widely in Natural Language Processing (NLP) to determine how important a word is in a document relative to a collection (corpus) of documents.
+
+#### What is Term Frequency (TF)?
+TF measures how often a word appears in a document.
+- Formula:
+**TF(t, d)** = (Number of times term *t* appears in document *d*) / (Total number of terms in document *d*)
+#### What is **Inverse Document Frequency (IDF)?**
+IDF measures how unique or rare a word is across **all documents** in the corpus.
+- Formula:
+**IDF(t)** = log( *N* / (1 + *df(t)*) )
+Where:
+- *N* = Total number of documents  
+- *df(t)* = Number of documents containing term *t*
+### 🧾 Example:
+If "cat" appears in 2 out of 3 documents:
+
+**IDF("cat")** = log( 3 / (1 + 2) ) = log(1) = **0**
+
+> 🔸 So common words get **low IDF scores**, while rare ones get **high scores**.
+#### 🧠 How Is TF-IDF Used in NLP?
+TF-IDF is used to convert text into numbers that can be used for:
+
+- 🧪 Text classification (e.g., spam detection)
+
+- 🗂 Information retrieval (e.g., search engines)
+
+- 📊 Clustering or topic modeling
+
+- 🤖 Machine learning models that take numerical input
+
+🧮 TF-IDF Score = TF × IDF
+Words that appear often in a document but rarely elsewhere get a high score.
 ## 🧩 Python Dependencies
 
 Below are the main libraries required to run this NLP demo project:
