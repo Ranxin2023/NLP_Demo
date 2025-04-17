@@ -35,9 +35,9 @@ def main():
     # preprocessing_demo()
     # text_normalizaion_demo()
     # three_processing_approach()
-    cos_sililarity_demo()
+    # cos_sililarity_demo()
     # nltk_demo()
-    # parsing_demo()
+    parsing_demo()
     # bow_demo()
     
 if __name__=='__main__':

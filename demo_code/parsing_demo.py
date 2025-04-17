@@ -41,7 +41,7 @@ def constituency_parsing():
         print(sent._.parse_string)
 
 def top_down_bottom_up_parsing():
-    print("Top Down Bottom Up Parsing")
+    print("Top Down Bottom Up Parsing...")
     import nltk
 
     # Define grammar
@@ -58,7 +58,7 @@ def top_down_bottom_up_parsing():
 
     # Sentence to parse
     sentence = ['the', 'cat', 'sat', 'on', 'the', 'mat']
-
+    print(f"Sentences: {' '.join(sentence)}")
     # Top-down parser
     print("Top-Down Parsing:")
     parser_td = nltk.RecursiveDescentParser(grammar)

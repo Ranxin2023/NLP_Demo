@@ -143,7 +143,7 @@ Each word in a sentence depends on another word
 
 It shows grammatical relations (like subject → verb, verb → object)
 
-```markdown
+
 | **Word** | **Head** | **Relation**                        |
 |----------|----------|-------------------------------------|
 | The      | cat      | determiner (det)                    |
@@ -153,7 +153,7 @@ It shows grammatical relations (like subject → verb, verb → object)
 | the      | mat      | determiner                          |
 | mat      | on       | object of preposition (pobj)        |
 
-```
+
 - **Top-Down Parsing**:
 Top-down parsing starts at the root of the parse tree (S = Sentence) and recursively applies grammar rules to predict what should come next (i.e., expand S → NP + VP).
 Starts at root → breaks into sub-parts recursively
@@ -180,6 +180,26 @@ S
             └── N: mat
 
 ```
+### 9. What is TF-IDF in NLP?
+
+## 🧩 Python Dependencies
+
+Below are the main libraries required to run this NLP demo project:
+
+| Package            | Version     | Description                                                                 |
+|--------------------|-------------|-----------------------------------------------------------------------------|
+| `nltk`             | 3.8.1       | Natural Language Toolkit for classic NLP tasks like tokenization and POS   |
+| `spacy`            | 3.7.2       | Industrial-strength NLP library used with `benepar` for parsing            |
+| `textblob`         | 0.17.1      | Simple NLP API for sentiment analysis and noun phrase extraction           |
+| `beautifulsoup4`   | 4.12.3      | For parsing HTML/XML data                                                  |
+| `transformers`     | 4.39.3      | Hugging Face Transformers library (e.g., BERT, GPT, RoBERTa)               |
+| `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
+| `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
+
+To install everything:
+
+```bash
+pip install -r requirements.txt
 
 ## Setup
 1. clone the repository

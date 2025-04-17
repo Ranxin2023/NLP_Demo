@@ -8,7 +8,8 @@ mat        → Head: on         | Dep: pobj
 .          → Head: sat        | Dep: punct
 Constituency Parsing...
 (S (NP (DT The) (NN cat)) (VP (VBD sat) (PP (IN on) (NP (DT the) (NN mat)))) (. .))
-Top Down Bottom Up Parsing
+Top Down Bottom Up Parsing...
+Sentences: the cat sat on the mat
 Top-Down Parsing:
 (S
   (NP (DT the) (N cat))
