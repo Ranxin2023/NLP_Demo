@@ -40,3 +40,17 @@ Document 3 TF-IDF:
   dog: 0.4035
   the: 0.6267
 
+professional article tf demo
+Top TF-IDF Terms:
+
+                   0
+water       0.486664
+polar       0.324443
+hydrogen    0.324443
+bonds       0.162221
+known       0.162221
+substances  0.162221
+solvent     0.162221
+property    0.162221
+atoms       0.162221
+oxygen      0.162221

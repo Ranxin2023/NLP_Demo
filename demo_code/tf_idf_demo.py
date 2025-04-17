@@ -1,5 +1,29 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from contextlib import redirect_stdout
+def professional_article_tf_idf():
+    print("professional article tf demo")
+    import pandas as pd
+
+    # Sample chemical article
+    doc = ["Water is a chemical compound consisting of two hydrogen atoms and one oxygen atom. "
+        "It is essential for all known forms of life. Water molecules are polar, which allows "
+        "them to form hydrogen bonds. This property makes water an excellent solvent, especially "
+        "for ionic and polar substances."]
+
+    # Step 1: Initialize vectorizer
+    vectorizer = TfidfVectorizer(stop_words='english')
+
+    # Step 2: Fit and transform the document
+    X = vectorizer.fit_transform(doc)
+
+    # Step 3: Create DataFrame for readability
+    tfidf_scores = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
+
+    # Show sorted scores (top 10 words)
+    sorted_scores = tfidf_scores.T.sort_values(by=0, ascending=False)
+    print("Top TF-IDF Terms:\n")
+    print(sorted_scores.head(10))
+
 def tf_idf_implementation():
     print("tf idf implementation...")
     import math
@@ -74,3 +98,4 @@ def tf_idf():
         with redirect_stdout(f):
             tf_idf_implementation()
             scikit_learn_for_idf()
+            professional_article_tf_idf()
