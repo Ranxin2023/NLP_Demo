@@ -9,5 +9,8 @@ doc2:I play football every weekend with my friends.
 Similarity between Doc 0 and 1 (same topic): 0.3073
 Similarity between Doc 0 and 2 (different topic): 0.0000
 example3...
+text 0: Machine learning is awesome.
+text 1: Machine learning is awesome!
+text 2: Machine learning is very interesting.
 Sim(text 0, text 1): 1.0000000000000002
 Sim(text 0, text 2): 0.47035054122017694
