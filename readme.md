@@ -42,27 +42,27 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 ### 2. What are the main challenges in NLP?
 
 ### 4. What are some common preprocessing techniques used in NLP?
-    - Tokenization: Splitting text into words or phrases.
+- Tokenization: Splitting text into words or phrases.
 
-    - Stop Word Removal: Removing common, less informative words.
+- Stop Word Removal: Removing common, less informative words.
 
-    - Text Normalization:
+- Text Normalization:
 
-        - Lowercasing
+    - Lowercasing
 
-        - Lemmatization
+    - Lemmatization
 
-        - Stemming
+    - Stemming
 
-        - Date/Time normalization
+    - Date/Time normalization
 
-    - Punctuation/Special Character Removal
+- Punctuation/Special Character Removal
 
-    - HTML Tag Removal
+- HTML Tag Removal
 
-    - Spell Correction
+- Spell Correction
 
-    - Sentence Segmentation
+- Sentence Segmentation
 
 ### 6. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
 - **Rule-Based Approach:**
