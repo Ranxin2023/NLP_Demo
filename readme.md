@@ -218,6 +218,13 @@ TF-IDF is used to convert text into numbers that can be used for:
 - 📊 Clustering or topic modeling
 
 - 🤖 Machine learning models that take numerical input
+#### 🧮 TF-IDF Score = TF × IDF
+Words that appear often in a document but rarely elsewhere get a high score.
+
+#### 🧠 Intuition:
+Words like "the" and "is" appear everywhere → low IDF → low TF-IDF.
+
+Words like "machine", "neural" appear in some docs but not all → higher IDF → useful for distinguishing docs.
 
 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.

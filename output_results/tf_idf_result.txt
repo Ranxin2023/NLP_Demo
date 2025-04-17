@@ -1,0 +1,42 @@
+tf idf implementation...
+Document 1 TF-IDF:
+  the: 0.2374
+  cat: 0.1667
+  sat: 0.1667
+  on: 0.1667
+  mat: 0.2342
+
+Document 2 TF-IDF:
+  the: 0.2374
+  dog: 0.1667
+  sat: 0.1667
+  on: 0.1667
+  log: 0.2342
+
+Document 3 TF-IDF:
+  the: 0.2849
+  cat: 0.2000
+  chased: 0.2811
+  dog: 0.2000
+
+scikit learn for idf
+Document 1 TF-IDF:
+  cat: 0.3742
+  mat: 0.4920
+  on: 0.3742
+  sat: 0.3742
+  the: 0.5812
+
+Document 2 TF-IDF:
+  dog: 0.3742
+  log: 0.4920
+  on: 0.3742
+  sat: 0.3742
+  the: 0.5812
+
+Document 3 TF-IDF:
+  cat: 0.4035
+  chased: 0.5306
+  dog: 0.4035
+  the: 0.6267
+
