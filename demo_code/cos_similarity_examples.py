@@ -42,11 +42,11 @@ def example3():
         "Machine learning is awesome!",
         "Machine learning is very interesting."
     ]
+    tfidf = TfidfVectorizer().fit_transform(texts)
+
     print(f"text 0: {texts[0]}")
     print(f"text 1: {texts[1]}")
     print(f"text 2: {texts[2]}")
-    tfidf = TfidfVectorizer().fit_transform(texts)
-
     print("Sim(text 0, text 1):", cosine_similarity(tfidf[0:1], tfidf[1:2])[0][0])
     print("Sim(text 0, text 2):", cosine_similarity(tfidf[0:1], tfidf[2:3])[0][0])
 
