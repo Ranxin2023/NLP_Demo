@@ -196,7 +196,6 @@ Below are the main libraries required to run this NLP demo project:
 | `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
 | `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
 
-To install everything:
 
 ## Setup
 1. clone the repository
