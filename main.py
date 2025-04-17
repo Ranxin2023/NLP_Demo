@@ -10,6 +10,7 @@ from demo_code.three_approaches import three_processing_approach
 from demo_code.nltk_demo import nltk_demo
 from demo_code.cos_similarity_examples import cos_sililarity_demo
 from demo_code.parsing_demo import parsing_demo
+from demo_code.bow_demo import bow_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -36,7 +37,8 @@ def main():
     # three_processing_approach()
     # cos_sililarity_demo()
     # nltk_demo()
-    parsing_demo()
+    # parsing_demo()
+    bow_demo()
     
 if __name__=='__main__':
     main()

@@ -197,3 +197,7 @@ python -m nltk.downloader all
 python -m spacy download en_core_web_sm
 python -m benepar.download_en3
 ``` 
+4. Open main.py, choose the demo function you want to run, then run
+```sh
+python main.py
+```

@@ -1,0 +1,16 @@
+Vocabulary: ['apples', 'i', 'love', 'mangoes', 'too']
+Document 1 Vector: [1, 1, 1, 0, 0]
+Document 2 Vector: [0, 1, 1, 1, 1]
+count vectorizer example 1...
+Vocabulary: ['apples' 'love' 'mangoes' 'too']
+Vectors:
+ [[1 1 0 0]
+ [0 1 1 1]]
+count vectorizer example 2...
+Vocabulary: ['awesome' 'data' 'fun' 'is' 'love' 'nlp' 'powerful' 'science']
+BoW Vectors:
+ [[0 0 0 0 1 1 0 0]
+ [1 0 0 1 0 1 0 0]
+ [0 1 1 1 0 0 0 1]
+ [0 1 0 0 1 0 0 0]
+ [0 1 0 1 0 0 1 0]]
