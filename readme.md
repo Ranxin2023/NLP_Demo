@@ -198,9 +198,6 @@ Below are the main libraries required to run this NLP demo project:
 
 To install everything:
 
-```bash
-pip install -r requirements.txt
-
 ## Setup
 1. clone the repository
 ```sh
