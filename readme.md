@@ -36,12 +36,12 @@ NLPMDEMO/
 ```
 
 ## NLP Concepts
-1. What is NLP?
+### 1. What is NLP?
 Natural Language Processing (NLP) is a subfield of Artificial Intelligence that focuses on the interaction between computers and human language. It enables machines to understand, interpret, and generate natural language in a way that is meaningful. NLP encompasses tasks such as translation, sentiment analysis, question answering, and more.
 
-2. What are the main challenges in NLP?
+### 2. What are the main challenges in NLP?
 
-4. What are some common preprocessing techniques used in NLP?
+### 4. What are some common preprocessing techniques used in NLP?
     - Tokenization: Splitting text into words or phrases.
 
     - Stop Word Removal: Removing common, less informative words.
@@ -64,7 +64,7 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 
     - Sentence Segmentation
 
-6. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
+### 6. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
 - **Rule-Based Approach:**
 
     - Uses manually crafted linguistic rules.
@@ -89,7 +89,7 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 
     - High performance, especially with large datasets.
 
-7. What is the **Bag-of-Words (BoW)** Model? 
+### 7. What is the **Bag-of-Words (BoW)** Model? 
 BoW is one of the simplest and most widely used techniques to convert text into numerical feature vectors.
 How It Works (Step-by-Step):
 - **Tokenization**:
@@ -115,7 +115,7 @@ Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
 ```
 - **Top-Down Parsing**:
 
-8.  What are the different types of parsing in NLP?
+### 8. What are the different types of parsing in NLP?
 Constituency Parsing, Dependency Parsing, Top-down Parsing, Bottom-up Parsing
 - **Constituency Parsing:**
 Constituency parsing breaks down a sentence into nested phrases (or constituents) using a context-free grammar (CFG). The output is a tree where:
