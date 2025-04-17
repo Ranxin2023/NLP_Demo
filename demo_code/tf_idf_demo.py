@@ -1,28 +1,41 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from contextlib import redirect_stdout
+import pandas as pd
 def professional_article_tf_idf():
-    print("professional article tf demo")
-    import pandas as pd
+    print("professional article tf demo...")
 
-    # Sample chemical article
-    doc = ["Water is a chemical compound consisting of two hydrogen atoms and one oxygen atom. "
-        "It is essential for all known forms of life. Water molecules are polar, which allows "
-        "them to form hydrogen bonds. This property makes water an excellent solvent, especially "
-        "for ionic and polar substances."]
+    # Sample article
+    text = """Water is a chemical compound consisting of two hydrogen atoms and one oxygen atom.
+    It is essential for all known forms of life. Water molecules are polar, which allows them to form hydrogen bonds.
+    This property makes water an excellent solvent, especially for ionic and polar substances."""
+
+    # Custom stopwords (domain-neutral terms)
+    custom_stopwords = {
+        'known', 'forms', 'life', 'essential', 'especially',
+        'them', 'all', 'it', 'is', 'for', 'this', 'makes'
+    }
 
     # Step 1: Initialize vectorizer
-    vectorizer = TfidfVectorizer(stop_words='english')
+    default_vectorizer = TfidfVectorizer(stop_words='english')
+    built_in_stopwords = set(default_vectorizer.get_stop_words())
 
-    # Step 2: Fit and transform the document
-    X = vectorizer.fit_transform(doc)
+    # Step 2: Combine built-in + custom stopwords
+    all_stopwords = built_in_stopwords.union(custom_stopwords)
 
-    # Step 3: Create DataFrame for readability
+    # Step 3: Create new vectorizer using combined stopwords
+    vectorizer = TfidfVectorizer(stop_words=list(all_stopwords), token_pattern=r'\b\w+\b')
+
+    # TF-IDF transform
+    X = vectorizer.fit_transform([text])
     tfidf_scores = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
 
-    # Show sorted scores (top 10 words)
+    # Sort and display
     sorted_scores = tfidf_scores.T.sort_values(by=0, ascending=False)
-    print("Top TF-IDF Terms:\n")
-    print(sorted_scores.head(10))
+    print("📘 professional article tf demo")
+    print("▼ Top TF-IDF Terms:\n")
+    print(sorted_scores.head(15))
+
+
 
 def tf_idf_implementation():
     print("tf idf implementation...")
