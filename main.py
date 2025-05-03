@@ -12,6 +12,7 @@ from demo_code.cos_similarity_examples import cos_sililarity_demo
 from demo_code.parsing_demo import parsing_demo
 from demo_code.bow_demo import bow_demo
 from demo_code.tf_idf_demo import tf_idf
+from demo_code.ML_algorithms import ML_algorithms
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -40,7 +41,8 @@ def main():
     # nltk_demo()
     # parsing_demo()
     # bow_demo()
-    tf_idf()
+    # tf_idf()
+    ML_algorithms()
     
 if __name__=='__main__':
     main()

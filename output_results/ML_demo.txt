@@ -1,0 +1,3 @@
+Transfomer demo....
+Input Sentense isI love using transformers for NLP
+Sentiment: POSITIVE, Confidence: 0.6530

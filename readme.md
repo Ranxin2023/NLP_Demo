@@ -242,7 +242,15 @@ Below are the main libraries required to run this NLP demo project:
 | `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
 | `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
 
+### 10. Machine Learning Algorithms used in NLP
+#### Naive Bayes
+- **Type**: Probabilistic classifier based on Bayes' Theorem.
+- How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
+- **Common Use**: Text classification, spam detection, sentiment analysis.
+- **Pros**: Simple, fast, works well on small datasets.
 
+####  Support Vector Machines (SVM)
+- **Type**: Supervised learning algorithm.
 ## Setup
 1. clone the repository
 ```sh
