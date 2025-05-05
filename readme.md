@@ -4,33 +4,47 @@ This project is a hands-on demo of various Natural Language Processing (NLP) tec
 
 ## Project Structure
 ```graphql
-NLPMDEMO/
+NLPDEMO/
 ├── datasets/
-│   └── text_preprocessing.html               # HTML resource for preprocessing
-├── demo_code/                                # All demo Python scripts
-│   ├── __pycache__/
-│   ├── cos_similarity_examples.py            # Cosine similarity demo
-│   ├── nlp_challenges.py                     # Challenges in NLP
-│   ├── nlp_tasks.py                          # Common NLP tasks
-│   ├── nltk_demo.py                          # NLTK-based parsing demo
+│   └── text_preprocessing.html               # Raw HTML used in preprocessing
+│
+├── demo_code/                                # All Python-based NLP demos
+│   ├── ML_in_NLP/                            # ML models for NLP
+│   │   ├── Decision_Tree.py                  # Decision Tree classifier demo
+│   │   ├── Naive_Bayes.py                    # Naive Bayes classifier demo
+│   │   ├── SVM_demo.py                       # SVM classifier demo
+│   │   ├── Transformer.py                    # Hugging Face transformer usage
+│   │   └── self_transformer.py               # Custom transformer model from scratch
+│   │
+│   ├── bow_demo.py                           # Bag of Words demo
+│   ├── cos_similarity_examples.py            # Cosine similarity example
+│   ├── ML_algorithms.py                      # Calls ML models from ML_in_NLP
+│   ├── nlp_challenges.py                     # NLP problem types and challenges
+│   ├── nlp_tasks.py                          # Types of NLP tasks explained
+│   ├── nltk_demo.py                          # POS tagging and tokenization
 │   ├── parsing_demo.py                       # Constituency & dependency parsing
-│   ├── preprocessing.py                      # Text preprocessing pipeline
-│   ├── text_normalization.py                 # Normalization: lowercase, stemming, etc.
-│   ├── tf_idf_demo.py                        # TF-IDF demonstration
-│   └── three_approaches.py                   # Top-down, bottom-up, constituency parsing
-├── output_results/                           # Output files from the demos
+│   ├── preprocessing.py                      # Token cleaning and stopword removal
+│   ├── text_normalization.py                 # Lowercasing, stemming, lemmatization
+│   ├── tf_idf_demo.py                        # TF-IDF vectorization demo
+│   └── three_approaches.py                   # Rule-based vs Statistical vs Neural
+│
+├── output_results/                           # Output logs and results
+│   ├── bow_demo.txt
 │   ├── cos_similarity_demo.txt
+│   ├── ML_demo.txt
 │   ├── nlp_challenges.txt
 │   ├── nlp_tasks.txt
 │   ├── nltk_demo.txt
 │   ├── parsing_result.txt
 │   ├── text_normalization.txt
 │   ├── text_preprocessing.txt
+│   ├── tf_idf_result.txt
 │   └── three_approach_result.txt
-├── .gitignore                                # Git ignore file
-├── main.py                                   # Optional entry point script
-├── README.md                                 # Project overview
-└── requirements.txt                          # Python dependencies
+│
+├── .gitignore                                # Standard Python gitignore
+├── main.py                                   # Entry point to run any demo
+├── README.md                                 # Project overview and docs
+└── requirements.txt                          # Python dependencies list
 
 
 ```
