@@ -23,14 +23,8 @@ def word_embedding_demo():
             '''
             This demonstrates a classic word embedding analogy:
 
-            king
-            −
-            man
-            +
-            woman
-            ≈
-            queen
             king−man+woman≈queen
+            
             A high score (0.7118) means the result vector is very close to the vector for “queen.”
 
             This shows that the model captures gender analogies based on context.
