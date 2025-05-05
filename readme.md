@@ -228,19 +228,6 @@ Words like "machine", "neural" appear in some docs but not all → higher IDF �
 
 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.
-## 🧩 Python Dependencies
-
-Below are the main libraries required to run this NLP demo project:
-
-| Package            | Version     | Description                                                                 |
-|--------------------|-------------|-----------------------------------------------------------------------------|
-| `nltk`             | 3.8.1       | Natural Language Toolkit for classic NLP tasks like tokenization and POS   |
-| `spacy`            | 3.7.2       | Industrial-strength NLP library used with `benepar` for parsing            |
-| `textblob`         | 0.17.1      | Simple NLP API for sentiment analysis and noun phrase extraction           |
-| `beautifulsoup4`   | 4.12.3      | For parsing HTML/XML data                                                  |
-| `transformers`     | 4.39.3      | Hugging Face Transformers library (e.g., BERT, GPT, RoBERTa)               |
-| `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
-| `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
 
 ### 10. Machine Learning Algorithms used in NLP
 #### Naive Bayes
@@ -261,7 +248,16 @@ Below are the main libraries required to run this NLP demo project:
 - **Common Use**: Information extraction, binary text classification.
 - **Pros**: Interpretable, easy to visualize.
 
-
+#### Random Forests
+- **Type**: Ensemble learning (collection of decision trees).
+- **How it works**: Builds multiple decision trees and averages their results to improve accuracy and reduce overfitting.
+- **Common Use**: Named entity recognition, sentiment classification.
+- **Pros**: More accurate and stable than a single decision tree.
+#### Transfomer
+- **Type**: Attention-based deep learning architecture.
+- **How it works**: Uses self-attention to weigh the importance of each word in a sentence relative to others.
+- **Common Use**: BERT, GPT, and similar models for classification, translation, Q&A, summarization.
+- **Pros**: State-of-the-art results; captures long-range dependencies better than LSTMs/RNNs.
 ### 11. Transfomers
 #### What is transformer in NLP
 The Transformer is a deep learning architecture introduced in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762). It has become the foundation of modern NLP models like BERT, GPT, and RoBERTa.
@@ -282,6 +278,27 @@ Where:
 - `q`, `k`, `v`: query, key, and value vectors
 - `dₖ`: dimension of keys (for scaling)
 - The result is a weighted sum of value vectors, based on how relevant each word is to the query
+4. **Multi-Head Attention**
+Instead of computing a single attention score, multiple attention heads capture different relationships in parallel, and their results are concatenated and projected back to the embedding space.
+5. **Feedforward Network (FFN)**
+After self-attention, each token's vector goes through a fully connected feedforward layer with non-linearity.
+6. **Residual Connections + Layer Normalization**
+Each block includes skip connections (residuals) and layer normalization to stabilize training.
+
+
+## 🧩 Python Dependencies
+
+Below are the main libraries required to run this NLP demo project:
+
+| Package            | Version     | Description                                                                 |
+|--------------------|-------------|-----------------------------------------------------------------------------|
+| `nltk`             | 3.8.1       | Natural Language Toolkit for classic NLP tasks like tokenization and POS   |
+| `spacy`            | 3.7.2       | Industrial-strength NLP library used with `benepar` for parsing            |
+| `textblob`         | 0.17.1      | Simple NLP API for sentiment analysis and noun phrase extraction           |
+| `beautifulsoup4`   | 4.12.3      | For parsing HTML/XML data                                                  |
+| `transformers`     | 4.39.3      | Hugging Face Transformers library (e.g., BERT, GPT, RoBERTa)               |
+| `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
+| `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
 
 ## Setup
 1. clone the repository
