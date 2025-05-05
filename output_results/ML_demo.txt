@@ -1,3 +1,25 @@
+Naive Bayes Demo.......
+
+Class 0 log probabilities:
+  amazing: -2.4849
+  bad: -1.7918
+  hate: -1.7918
+  is: -1.7918
+  love: -2.4849
+  nlp: -2.4849
+  spam: -1.3863
+
+Class 1 log probabilities:
+  amazing: -1.7918
+  bad: -2.4849
+  hate: -2.4849
+  is: -1.7918
+  love: -1.7918
+  nlp: -1.3863
+  spam: -2.4849
+[0]
+SVM demo....
+[1]
 Transfomer demo....
 Input Sentense isI love using transformers for NLP
-Sentiment: POSITIVE, Confidence: 0.6530
+Sentiment: NEGATIVE, Confidence: 0.5635

@@ -249,8 +249,31 @@ Below are the main libraries required to run this NLP demo project:
 - **Common Use**: Text classification, spam detection, sentiment analysis.
 - **Pros**: Simple, fast, works well on small datasets.
 
-####  Support Vector Machines (SVM)
+#### Support Vector Machines (SVM)
 - **Type**: Supervised learning algorithm.
+- **How it works**: Finds a hyperplane that best separates data into classes in a high-dimensional space.
+- **Common Use**: Text classification, NER (Named Entity Recognition), sentiment analysis.
+- **Pros**: Works well for high-dimensional data (e.g., text vectors), effective even with limited samples.
+
+#### Decision Trees
+- **Type**: Rule-based supervised learning model.
+- **How it works**: Builds a tree structure where each internal node is a decision on a feature, and each leaf node is a class label.
+- **Common Use**: Information extraction, binary text classification.
+- **Pros**: Interpretable, easy to visualize.
+
+
+### 11. Transfomers
+#### What is transformer in NLP
+The Transformer is a deep learning architecture introduced in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762). It has become the foundation of modern NLP models like BERT, GPT, and RoBERTa.
+
+Unlike RNNs or LSTMs, which process sequences token by token, Transformers use self-attention to analyze an entire sequence in parallel. This allows them to capture global context, making them faster and more effective for long sequences.
+#### 🧠 How the Transformer Works (Simplified Overview):
+1. **Token Embedding**
+Each word is converted into a dense vector using an `nn.Embedding` layer.
+2. **Positional Encoding**
+Since Transformers don't have sequence order by default, positional encodings (sinusoidal functions) are added to the embeddings to represent the position of each token in the sentence.
+3. **Self-Attention**
+
 ## Setup
 1. clone the repository
 ```sh
