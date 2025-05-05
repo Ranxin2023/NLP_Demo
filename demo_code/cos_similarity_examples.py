@@ -35,6 +35,7 @@ def example2():
     print(f"doc2:{documents[2]}")
     print(f"Similarity between Doc 0 and 1 (same topic): {sim_0_1:.4f}")
     print(f"Similarity between Doc 0 and 2 (different topic): {sim_0_2:.4f}")
+    
 def example3():
     print("example3...")
     texts = [

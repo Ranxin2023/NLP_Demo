@@ -273,6 +273,15 @@ Each word is converted into a dense vector using an `nn.Embedding` layer.
 2. **Positional Encoding**
 Since Transformers don't have sequence order by default, positional encodings (sinusoidal functions) are added to the embeddings to represent the position of each token in the sentence.
 3. **Self-Attention**
+The self-attention mechanism is the core of the Transformer architecture. It allows the model to weigh the importance of different words in a sequence when encoding each word — enabling the model to understand context from surrounding tokens.
+
+For a word `𝑞`, self-attention is computed as:
+    Attention(q, k, v) = softmax((q · kᵀ) / √dₖ) · v
+
+Where:
+- `q`, `k`, `v`: query, key, and value vectors
+- `dₖ`: dimension of keys (for scaling)
+- The result is a weighted sum of value vectors, based on how relevant each word is to the query
 
 ## Setup
 1. clone the repository

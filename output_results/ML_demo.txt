@@ -20,6 +20,21 @@ Class 1 log probabilities:
 [0]
 SVM demo....
 [1]
+Decision Tree Demo......
+🧮 Vectorized input (bag-of-words counts):
+[[0 0 0 0 1 1 0]
+ [1 0 0 1 0 1 0]
+ [0 0 1 0 0 0 1]
+ [0 1 0 1 0 0 1]] 
+
+🌳 Decision Tree Rules:
+Tree rules are:
+|--- nlp <= 0.50
+|   |--- class: 0
+|--- nlp >  0.50
+|   |--- class: 1
+
+[0]
 Transfomer demo....
 Input Sentense isI love using transformers for NLP
-Sentiment: NEGATIVE, Confidence: 0.5635
+Sentiment: NEGATIVE, Confidence: 0.6551
