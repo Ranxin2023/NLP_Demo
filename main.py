@@ -13,6 +13,7 @@ from demo_code.parsing_demo import parsing_demo
 from demo_code.bow_demo import bow_demo
 from demo_code.tf_idf_demo import tf_idf
 from demo_code.ML_algorithms import ML_algorithms
+from demo_code.word_embeddings import word_embedding_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -42,7 +43,8 @@ def main():
     # parsing_demo()
     # bow_demo()
     # tf_idf()
-    ML_algorithms()
+    # ML_algorithms()
+    word_embedding_demo()
     
 if __name__=='__main__':
     main()

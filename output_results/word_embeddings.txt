@@ -1,0 +1,9 @@
+Similarity between 'king' and 'queen': 0.6511
+'king' - 'man' + 'woman' = 'queen' (score: 0.7118)
+Words most similar to 'apple':
+  apples: 0.7204
+  pear: 0.6451
+  fruit: 0.6410
+  berry: 0.6302
+  pears: 0.6134
+datascience is OOV (Out-of-Vocabulary)
