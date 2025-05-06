@@ -19,7 +19,28 @@ Class 1 log probabilities:
   spam: -2.4849
 [0]
 SVM demo....
-[1]
+📘 Vocabulary (word -> index):
+ 0: amazing
+ 1: bad
+ 2: hate
+ 3: is
+ 4: love
+ 5: nlp
+ 6: spam
+
+🧮 TF-IDF Matrix:
+[[0.         0.         0.         0.         0.78528828 0.6191303
+  0.        ]
+ [0.66767854 0.         0.         0.52640543 0.         0.52640543
+  0.        ]
+ [0.         0.         0.78528828 0.         0.         0.
+  0.6191303 ]
+ [0.         0.66767854 0.         0.52640543 0.         0.
+  0.52640543]]
+
+🧠 Support vector indices (in training set): [2 3 0 1]
+
+🔎 Prediction for "NLP is bad": Positive
 Decision Tree Demo......
 🧮 Vectorized input (bag-of-words counts):
 [[0 0 0 0 1 1 0]
@@ -29,12 +50,12 @@ Decision Tree Demo......
 
 🌳 Decision Tree Rules:
 Tree rules are:
-|--- nlp <= 0.50
-|   |--- class: 0
-|--- nlp >  0.50
+|--- spam <= 0.50
 |   |--- class: 1
+|--- spam >  0.50
+|   |--- class: 0
 
 [0]
 Transfomer demo....
 Input Sentense isI love using transformers for NLP
-Sentiment: NEGATIVE, Confidence: 0.6551
+Sentiment: POSITIVE, Confidence: 0.6594

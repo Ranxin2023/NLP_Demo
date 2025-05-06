@@ -43,8 +43,8 @@ def main():
     # parsing_demo()
     # bow_demo()
     # tf_idf()
-    # ML_algorithms()
-    word_embedding_demo()
+    ML_algorithms()
+    # word_embedding_demo()
     
 if __name__=='__main__':
     main()
