@@ -311,6 +311,7 @@ Words that appear often in a document but rarely elsewhere get a high score.
 - **How it works**: Uses self-attention to weigh the importance of each word in a sentence relative to others.
 - **Common Use**: BERT, GPT, and similar models for classification, translation, Q&A, summarization.
 - **Pros**: State-of-the-art results; captures long-range dependencies better than LSTMs/RNNs.
+
 ### 11. Transfomers
 #### What is transformer in NLP
 The Transformer is a deep learning architecture introduced in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762). It has become the foundation of modern NLP models like BERT, GPT, and RoBERTa.
@@ -338,6 +339,48 @@ After self-attention, each token's vector goes through a fully connected feedfor
 6. **Residual Connections + Layer Normalization**
 Each block includes skip connections (residuals) and layer normalization to stabilize training.
 
+### 12. Word Embeddings
+Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
+#### 🔧 How it Works (Demo Summary)
+In this project, we used `gensim.downloader` to load the pre-trained word2vec-google-news-300 model and explored embeddings with:
+```python
+model = api.load("word2vec-google-news-300")
+```
+This model maps each word to a 300-dimensional vector trained on Google News.
+
+#### ✅ What We Explored
+- **Semantic Similarity:**:
+    ```text
+        Similarity between 'king' and 'queen': 0.6511
+    ```
+- **Syntactic Analogy**:
+    ```text
+    'king' - 'man' + 'woman' = 'queen' (score: 0.7118)
+    ```
+- **Nearest Neighbors**:
+    ```text
+        Words most similar to 'apple':
+    apples, pear, fruit, berry, pears
+
+    ```
+- **Out-of-Vocabulary Detection:**:
+    ```text
+        datascience is OOV (Out-of-Vocabulary)
+    ```
+
+#### 🧠 Why Word Embeddings Matter
+- They **capture meaning** more effectively than BoW or TF-IDF.
+
+- Enable **vector operations** (e.g., analogies).
+
+- Useful for downstream tasks: classification, translation, question answering, etc.    
+
+#### 📦 Tools Used
+- `gensim` for pretrained embedding loading.
+
+- `contextlib.redirect_stdout` to write output to a file.
+
+- `redirect_stderr` to silence progress bar clutter.
 
 ## 🧩 Python Dependencies
 
