@@ -248,25 +248,64 @@ Words that appear often in a document but rarely elsewhere get a high score.
 - **Type**: Probabilistic classifier based on Bayes' Theorem.
 - How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
 - **Common Use**: Text classification, spam detection, sentiment analysis.
-- **Pros**: Simple, fast, works well on small datasets.
+- **Pros**:
+    - Simple to implement and interpret
+    - Very fast even with large feature sets
+    - Performs surprisingly well on small datasets
+- **Cons**:
+    - **Unrealistic independence assumption** — words in natural language are highly dependent on context.
+    - Can be biased if a word never appeared in training for a class (though smoothing helps).
 
 #### Support Vector Machines (SVM)
 - **Type**: Supervised learning algorithm.
 - **How it works**: Finds a hyperplane that best separates data into classes in a high-dimensional space.
 - **Common Use**: Text classification, NER (Named Entity Recognition), sentiment analysis.
-- **Pros**: Works well for high-dimensional data (e.g., text vectors), effective even with limited samples.
+- **Pros**: 
+    - Handles high-dimensional spaces well (like TF-IDF vectors).
+    - Effective when the number of samples is small compared to features.
+    - With kernel tricks, it can model complex boundaries.
+
+- **Cons**:
+    - **Not probabilistic** — only gives class decision, not confidence (unless calibrated).
+    - Can be slow on very large datasets.
+    - Hard to interpret directly (no clear tree or rules).
+
+- **Based on the demo**:
+    - Used `SVC` with a linear kernel and TfidfVectorizer.
+    - All samples became support vectors — common when you have very few, diverse inputs.
+    - The model predicted `NLP is bad` as positive, because `NLP` had stronger TF-IDF weights than `bad` and was associated with positive classes in training.
+
 
 #### Decision Trees
 - **Type**: Rule-based supervised learning model.
 - **How it works**: Builds a tree structure where each internal node is a decision on a feature, and each leaf node is a class label.
 - **Common Use**: Information extraction, binary text classification.
-- **Pros**: Interpretable, easy to visualize.
+- **Pros**: 
+    - Highly interpretable — you can visualize and understand decisions.
+    - Can handle mixed feature types (text + numeric).
+- **Cons**:
+    - Prone to overfitting, especially on small datasets.
+    - Less robust to small variations in data (a small change can alter the tree structure drastically).
+- **Based on the demo**:
+
+    - You trained a DecisionTreeClassifier using CountVectorizer.
+
+    - Your model produced a rule like:
+
+    ```cpp
+        if "nlp" appears more than 0.5 → class 1 (positive)
+        else → class 0 (negative)
+    ```
+    - Simple and interpretable, but fragile — e.g., `"Spam is amazing"` could confuse it since "spam" = negative but "amazing" = positive.
+
+
 
 #### Random Forests
 - **Type**: Ensemble learning (collection of decision trees).
 - **How it works**: Builds multiple decision trees and averages their results to improve accuracy and reduce overfitting.
 - **Common Use**: Named entity recognition, sentiment classification.
 - **Pros**: More accurate and stable than a single decision tree.
+
 #### Transfomer
 - **Type**: Attention-based deep learning architecture.
 - **How it works**: Uses self-attention to weigh the importance of each word in a sentence relative to others.

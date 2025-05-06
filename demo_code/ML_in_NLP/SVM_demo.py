@@ -15,10 +15,28 @@ def SVM_demo():
     print("🧮 TF-IDF Matrix:")
     print(X.toarray())
     print()
+    '''
+    Each row = a sentence
+    Each column = a word from the vocabulary
+    Each value = TF-IDF score (importance of the word in the sentence)
+
+    Example:
+    Row 0 = "I love NLP"
+
+    TF-IDF for "love" (index 4): 0.78528828
+
+    TF-IDF for "nlp" (index 5): 0.6191303
+
+    Other columns are 0 because those words didn't appear in this sentence.
+    '''
     # 4. Train SVM model
     clf = SVC(kernel='linear')
     clf.fit(X, labels)
+    '''
+    These are the indices of the support vectors — the most important training points used by the SVM to define the decision boundary.
 
+    All 4 training examples ended up as support vectors here, likely because the dataset is very small and each example is critical.
+    '''
     # 5. Support vectors
     print("🧠 Support vector indices (in training set):", clf.support_)
     print()
