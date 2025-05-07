@@ -1,0 +1,21 @@
+Rule-based POS tagging (NLTK):
+The        ➝ DT
+quick      ➝ JJ
+brown      ➝ NN
+fox        ➝ NN
+jumps      ➝ VBZ
+over       ➝ IN
+the        ➝ DT
+lazy       ➝ JJ
+dog        ➝ NN
+
+Neural POS tagging (spaCy):
+The        ➝ DET
+quick      ➝ ADJ
+brown      ➝ ADJ
+fox        ➝ NOUN
+jumps      ➝ VERB
+over       ➝ ADP
+the        ➝ DET
+lazy       ➝ ADJ
+dog        ➝ NOUN

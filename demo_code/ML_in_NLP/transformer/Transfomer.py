@@ -1,8 +1,8 @@
 import torch
 import torch.nn.functional as F
-from demo_code.ML_in_NLP.self_transfomer import TransformerSentimentClassifier
-from demo_code.ML_in_NLP.self_transfomer import tokenizer
-from demo_code.ML_in_NLP.self_transfomer import vocab
+from demo_code.ML_in_NLP.transformer.self_implementation import TransformerSentimentClassifier
+from demo_code.ML_in_NLP.transformer.self_implementation import tokenizer
+from demo_code.ML_in_NLP.transformer.self_implementation import vocab
 
 def transfomer_demo():
     # Input sentence

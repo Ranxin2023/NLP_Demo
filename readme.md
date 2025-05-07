@@ -77,8 +77,17 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 - Spell Correction
 
 - Sentence Segmentation
+### 5. Part-of-Speech (POS) Tagging in NLP
+**Part-of-speech tagging** is the process of assigning grammatical categories (like noun, verb, adjective) to each word in a sentence. It’s essential for understanding sentence structure and meaning.
 
-### 6. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
+In this project, we demonstrated three types of POS tagging:
+✅ **Rule-Based/Statistical Tagging (NLTK)**
+We used NLTK's `pos_tag()` which combines handcrafted rules and statistical probabilities.
+```python
+from nltk import pos_tag, word_tokenize
+pos_tag(word_tokenize("The quick brown fox jumps over the lazy dog"))
+```
+### 7. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
 - **Rule-Based Approach:**
 
     - Uses manually crafted linguistic rules.
@@ -103,7 +112,7 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 
     - High performance, especially with large datasets.
 
-### 7. What is the **Bag-of-Words (BoW)** Model? 
+### 8. What is the **Bag-of-Words (BoW)** Model? 
 BoW is one of the simplest and most widely used techniques to convert text into numerical feature vectors.
 How It Works (Step-by-Step):
 - **Tokenization**:
@@ -130,7 +139,7 @@ Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
 - **Why Use BoW?**:
 BoW transforms human language into a form that machine learning models can understand.
 
-### 8. What are the different types of parsing in NLP?
+### 9. What are the different types of parsing in NLP?
 Constituency Parsing, Dependency Parsing, Top-down Parsing, Bottom-up Parsing
 - **Constituency Parsing:**
 Constituency parsing breaks down a sentence into nested phrases (or constituents) using a context-free grammar (CFG). The output is a tree where:
@@ -196,7 +205,7 @@ S
 
 ```
 
-### 9. What is TF-IDF in NLP?
+### 10. What is TF-IDF in NLP?
 **TF-IDF** stands for:
 
 - TF: Term Frequency
@@ -243,7 +252,7 @@ Words like "machine", "neural" appear in some docs but not all → higher IDF �
 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.
 
-### 10. Machine Learning Algorithms used in NLP
+### 11. Machine Learning Algorithms used in NLP
 #### Naive Bayes
 - **Type**: Probabilistic classifier based on Bayes' Theorem.
 - How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
@@ -287,9 +296,7 @@ Words that appear often in a document but rarely elsewhere get a high score.
     - Prone to overfitting, especially on small datasets.
     - Less robust to small variations in data (a small change can alter the tree structure drastically).
 - **Based on the demo**:
-
     - You trained a DecisionTreeClassifier using CountVectorizer.
-
     - Your model produced a rule like:
 
     ```cpp
@@ -297,7 +304,6 @@ Words that appear often in a document but rarely elsewhere get a high score.
         else → class 0 (negative)
     ```
     - Simple and interpretable, but fragile — e.g., `"Spam is amazing"` could confuse it since "spam" = negative but "amazing" = positive.
-
 
 
 #### Random Forests
@@ -312,7 +318,7 @@ Words that appear often in a document but rarely elsewhere get a high score.
 - **Common Use**: BERT, GPT, and similar models for classification, translation, Q&A, summarization.
 - **Pros**: State-of-the-art results; captures long-range dependencies better than LSTMs/RNNs.
 
-### 11. Transfomers
+### 12. Transfomers
 #### What is transformer in NLP
 The Transformer is a deep learning architecture introduced in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762). It has become the foundation of modern NLP models like BERT, GPT, and RoBERTa.
 
