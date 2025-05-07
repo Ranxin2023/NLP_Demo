@@ -19,3 +19,13 @@ over       ➝ ADP
 the        ➝ DET
 lazy       ➝ ADJ
 dog        ➝ NOUN
+
+Transformer-based POS tagging (BERT):
+the             ➝ DET
+quick brown     ➝ ADJ
+fox             ➝ NOUN
+jumps           ➝ VERB
+over            ➝ ADP
+the             ➝ DET
+lazy            ➝ ADJ
+dog             ➝ NOUN

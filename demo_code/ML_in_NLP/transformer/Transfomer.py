@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from demo_code.ML_in_NLP.transformer.self_implementation import TransformerSentimentClassifier
 from demo_code.ML_in_NLP.transformer.self_implementation import tokenizer
 from demo_code.ML_in_NLP.transformer.self_implementation import vocab
-
+from demo_code.ML_in_NLP.transformer.datacamp_tutorial import Transformer_Datacamp
 def transfomer_demo():
     # Input sentence
     print("Transfomer demo....")
@@ -28,3 +28,13 @@ def transfomer_demo():
         probs = F.softmax(logits, dim=-1)           # Convert to probabilities
         sentiment = "POSITIVE" if torch.argmax(probs) == 1 else "NEGATIVE"
         print(f"Sentiment: {sentiment}, Confidence: {probs.max().item():.4f}")
+
+def transfomer_datacamp():
+    src_vocab_size = 5000
+    tgt_vocab_size = 5000
+    d_model = 512
+    num_heads = 8
+    num_layers = 6
+    d_ff = 2048
+    max_seq_length = 100
+    dropout = 0.1

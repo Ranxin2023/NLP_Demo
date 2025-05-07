@@ -14,7 +14,7 @@ from demo_code.bow_demo import bow_demo
 from demo_code.tf_idf_demo import tf_idf
 from demo_code.ML_algorithms import ML_algorithms
 from demo_code.word_embeddings import word_embedding_demo
-from demo_code.tagging_demo import tagging_demo
+from demo_code.Sequence_Labelling.tagging_demo import tagging_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')

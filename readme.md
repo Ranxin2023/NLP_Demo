@@ -87,6 +87,30 @@ We used NLTK's `pos_tag()` which combines handcrafted rules and statistical prob
 from nltk import pos_tag, word_tokenize
 pos_tag(word_tokenize("The quick brown fox jumps over the lazy dog"))
 ```
+
+| **Word**  | **POS Tag** | **Meaning**             |
+| --------- | ----------- | ----------------------- |
+| The       |  DT         | Determiner              |
+| quick     |  JJ         | Adjective               |
+| brown     |  NN ❌     | Noun (should be ADJ)    |
+| fox       |  NN         | Noun                    |
+| jumps     |  VBZ        | Verb (3rd person sing.) |
+| over      |  IN         | Preposition             |
+| the       |  DT         | Determiner              |
+| lazy      |  JJ         | Adjective               |
+| dog       |  NN         | Noun                    |
+
+
+📊 **Summary Comparison**:
+
+| Model     | Strengths                      | Weaknesses                             |
+| --------- | ------------------------------ | -------------------------------------- |
+| **NLTK**  | Fast, simple, rule/statistical | Lacks deep context (e.g., “brown”)     |
+| **spaCy** | Neural, context-aware          | Less accurate on very complex syntax   |
+| **BERT**  | Deep context, phrase-sensitive | Slower, more complex, may merge tokens |
+
+
+🔍 Issue: "brown" is misclassified as a noun (NN) instead of an adjective (JJ). This is a known limitation of rule-based systems that lack context understanding.
 ### 7. What are the differences between rule-based, statistical-based, and neural-based approaches in NLP?
 - **Rule-Based Approach:**
 
@@ -387,6 +411,8 @@ This model maps each word to a 300-dimensional vector trained on Google News.
 - `contextlib.redirect_stdout` to write output to a file.
 
 - `redirect_stderr` to silence progress bar clutter.
+
+### 14.  What is Sequence Labeling?
 
 ## 🧩 Python Dependencies
 
