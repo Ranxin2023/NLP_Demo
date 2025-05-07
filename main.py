@@ -15,6 +15,7 @@ from demo_code.tf_idf_demo import tf_idf
 from demo_code.ML_algorithms import ML_algorithms
 from demo_code.word_embeddings import word_embedding_demo
 from demo_code.Sequence_Labelling.tagging_demo import tagging_demo
+from demo_code.Sequence_Labelling.semantic_role_labeling import SRL_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -46,7 +47,8 @@ def main():
     # tf_idf()
     # ML_algorithms()
     # word_embedding_demo()
-    tagging_demo()
+    # tagging_demo()
+    SRL_demo()
     
 if __name__=='__main__':
     main()

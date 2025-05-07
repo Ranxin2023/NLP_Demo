@@ -413,6 +413,11 @@ This model maps each word to a 300-dimensional vector trained on Google News.
 - `redirect_stderr` to silence progress bar clutter.
 
 ### 14.  What is Sequence Labeling?
+#### 2. Named Entity Recognition (NER)
+Recognizes and classifies **named entities** (real-world objects) into predefined categories:
+#### 3. Chunking (Shallow Parsing)
+Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
+🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
 
 ## 🧩 Python Dependencies
 

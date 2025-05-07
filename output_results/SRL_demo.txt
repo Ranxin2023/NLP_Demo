@@ -1,0 +1,12 @@
+SRL demo......
+
+Syntactic Dependencies:
+John       nsubj      gave
+gave       ROOT       gave
+Mary       dative     gave
+a          det        book
+book       dobj       gave
+on         prep       book
+her        poss       birthday
+birthday   pobj       on
+.          punct      gave
