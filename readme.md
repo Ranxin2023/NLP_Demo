@@ -345,7 +345,7 @@ After self-attention, each token's vector goes through a fully connected feedfor
 6. **Residual Connections + Layer Normalization**
 Each block includes skip connections (residuals) and layer normalization to stabilize training.
 
-### 12. Word Embeddings
+### 13. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
 #### 🔧 How it Works (Demo Summary)
 In this project, we used `gensim.downloader` to load the pre-trained word2vec-google-news-300 model and explored embeddings with:
