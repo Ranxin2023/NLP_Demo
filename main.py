@@ -16,6 +16,7 @@ from demo_code.ML_algorithms import ML_algorithms
 from demo_code.word_embeddings import word_embedding_demo
 from demo_code.Sequence_Labelling.tagging_demo import tagging_demo
 from demo_code.Sequence_Labelling.semantic_role_labeling import SRL_demo
+from demo_code.ML_in_NLP.transformer.Transfomer import transfomer_datacamp
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -48,7 +49,8 @@ def main():
     # ML_algorithms()
     # word_embedding_demo()
     # tagging_demo()
-    SRL_demo()
+    # SRL_demo()
+    transfomer_datacamp()
     
 if __name__=='__main__':
     main()
