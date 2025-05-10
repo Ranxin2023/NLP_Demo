@@ -4,31 +4,40 @@ This project is a hands-on demo of various Natural Language Processing (NLP) tec
 
 ## Project Structure
 ```graphql
-NLPDEMO/
-├── datasets/
-│   └── text_preprocessing.html               # Raw HTML used in preprocessing
+NLPMDEMO/
 │
-├── demo_code/                                # All Python-based NLP demos
-│   ├── ML_in_NLP/                            # ML models for NLP
-│   │   ├── Decision_Tree.py                  # Decision Tree classifier demo
-│   │   ├── Naive_Bayes.py                    # Naive Bayes classifier demo
-│   │   ├── SVM_demo.py                       # SVM classifier demo
-│   │   ├── Transformer.py                    # Hugging Face transformer usage
-│   │   └── self_transformer.py               # Custom transformer model from scratch
+├── demo_code/
+│   ├── ML_in_NLP/
+│   │   ├── transformer/
+│   │   │   ├── Decision_Tree.py
+│   │   │   ├── Naive_Bayes.py
+│   │   │   └── SVM_demo.py
+│   │   └── Sequence_Labelling/
+│   │       ├── chunking.py
+│   │       ├── NER_demo.py
+│   │       ├── semantic_role_labeling.py
+│   │       └── tagging_demo.py
 │   │
-│   ├── bow_demo.py                           # Bag of Words demo
-│   ├── cos_similarity_examples.py            # Cosine similarity example
-│   ├── ML_algorithms.py                      # Calls ML models from ML_in_NLP
-│   ├── nlp_challenges.py                     # NLP problem types and challenges
-│   ├── nlp_tasks.py                          # Types of NLP tasks explained
-│   ├── nltk_demo.py                          # POS tagging and tokenization
-│   ├── parsing_demo.py                       # Constituency & dependency parsing
-│   ├── preprocessing.py                      # Token cleaning and stopword removal
-│   ├── text_normalization.py                 # Lowercasing, stemming, lemmatization
-│   ├── tf_idf_demo.py                        # TF-IDF vectorization demo
-│   └── three_approaches.py                   # Rule-based vs Statistical vs Neural
+│   └── Word_Embeddings/
+│       ├── BERT.py
+│       ├── word2vec.py
+│       ├── word_embeddings.py
+│       ├── word_embedding_algorithms.py
+│       ├── bow_demo.py
+│       ├── cos_similarity_examples.py
+│       ├── ML_algorithms.py
+│       ├── nlp_challenges.py
+│       ├── nlp_tasks.py
+│       ├── nltk_demo.py
+│       ├── parsing_demo.py
+│       ├── preprocessing.py
+│       ├── text_normalization.py
+│       ├── tf_idf_demo.py
+│       └── three_approaches.py
 │
-├── output_results/                           # Output logs and results
+├── nlp_env/                   # Python virtual environment
+│
+├── output_results/           # Output logs from demos and experiments
 │   ├── bow_demo.txt
 │   ├── cos_similarity_demo.txt
 │   ├── ML_demo.txt
@@ -36,15 +45,21 @@ NLPDEMO/
 │   ├── nlp_tasks.txt
 │   ├── nltk_demo.txt
 │   ├── parsing_result.txt
+│   ├── SRL_demo.txt
+│   ├── tag_demo.txt
 │   ├── text_normalization.txt
 │   ├── text_preprocessing.txt
 │   ├── tf_idf_result.txt
-│   └── three_approach_result.txt
+│   ├── three_approach_result.txt
+│   ├── transformer_datacamp.txt
+│   ├── word_embeddings_algorithms.txt
+│   └── word_embeddings.txt
 │
-├── .gitignore                                # Standard Python gitignore
-├── main.py                                   # Entry point to run any demo
-├── README.md                                 # Project overview and docs
-└── requirements.txt                          # Python dependencies list
+├── main.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+
 
 
 ```
