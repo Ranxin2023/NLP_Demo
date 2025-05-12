@@ -4,40 +4,51 @@ This project is a hands-on demo of various Natural Language Processing (NLP) tec
 
 ## Project Structure
 ```graphql
-NLPMDEMO/
+NLPDemo/
+│
+├── datasets/                          # (Optional) Datasets used in demos (not shown yet)
 │
 ├── demo_code/
-│   ├── ML_in_NLP/
-│   │   ├── transformer/
-│   │   │   ├── Decision_Tree.py
-│   │   │   ├── Naive_Bayes.py
-│   │   │   └── SVM_demo.py
-│   │   └── Sequence_Labelling/
-│   │       ├── chunking.py
-│   │       ├── NER_demo.py
-│   │       ├── semantic_role_labeling.py
-│   │       └── tagging_demo.py
+│   ├── GeneralNLP/                    # General NLP tasks and preprocessing
+│   │   ├── nlp_challenges.py
+│   │   ├── nlp_tasks.py
+│   │   ├── preprocessing.py
+│   │   └── three_approaches.py
 │   │
-│   └── Word_Embeddings/
+│   ├── ML_in_NLP/                     # ML models used in NLP tasks
+│   │   ├── transformer/
+│   │   │   ├── datacamp_tutorial.py
+│   │   │   ├── self_implementation.py
+│   │   │   └── Transformer.py
+│   │   ├── Decision_Tree.py
+│   │   ├── ML_algorithms.py
+│   │   ├── Naive_Bayes.py
+│   │   └── SVM_demo.py
+│   │
+│   ├── NLPUtils/                      # Utility demos and examples
+│   │   ├── bow_demo.py
+│   │   ├── cos_similarity_examples.py
+│   │   ├── nltk_demo.py
+│   │   ├── parsing_demo.py
+│   │   ├── text_normalization.py
+│   │   └── tf_idf_demo.py
+│   │
+│   ├── Sequence_Labelling/           # Sequence labeling tasks
+│   │   ├── chunking.py
+│   │   ├── NER_demo.py
+│   │   ├── semantic_role_labeling.py
+│   │   └── tagging_demo.py
+│   │
+│   └── Word_Embeddings/              # Word embedding algorithm demos
 │       ├── BERT.py
+│       ├── GloVe_demo.py
 │       ├── word2vec.py
 │       ├── word_embeddings.py
-│       ├── word_embedding_algorithms.py
-│       ├── bow_demo.py
-│       ├── cos_similarity_examples.py
-│       ├── ML_algorithms.py
-│       ├── nlp_challenges.py
-│       ├── nlp_tasks.py
-│       ├── nltk_demo.py
-│       ├── parsing_demo.py
-│       ├── preprocessing.py
-│       ├── text_normalization.py
-│       ├── tf_idf_demo.py
-│       └── three_approaches.py
+│       └── word_embedding_algorithms.py
 │
-├── nlp_env/                   # Python virtual environment
+├── nlp_env/                          # Python virtual environment (ignored in Git)
 │
-├── output_results/           # Output logs from demos and experiments
+├── output_results/                   # Text outputs and logs from all demos
 │   ├── bow_demo.txt
 │   ├── cos_similarity_demo.txt
 │   ├── ML_demo.txt
@@ -52,14 +63,13 @@ NLPMDEMO/
 │   ├── tf_idf_result.txt
 │   ├── three_approach_result.txt
 │   ├── transformer_datacamp.txt
-│   ├── word_embeddings_algorithms.txt
-│   └── word_embeddings.txt
+│   ├── word_embeddings.txt
+│   └── word_embeddings_algorithms.txt
 │
-├── main.py
-├── README.md
-├── requirements.txt
-└── .gitignore
-
+├── main.py                           # Entry point to run selected demos
+├── readme.md                         # Project documentation
+├── requirements.txt                  # Python dependencies
+└── .gitignore                        # Files and folders ignored by Git
 
 
 ```
@@ -449,16 +459,20 @@ Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrase
 
 Below are the main libraries required to run this NLP demo project:
 
-| Package            | Version     | Description                                                                 |
-|--------------------|-------------|-----------------------------------------------------------------------------|
-| `nltk`             | 3.8.1       | Natural Language Toolkit for classic NLP tasks like tokenization and POS   |
-| `spacy`            | 3.7.2       | Industrial-strength NLP library used with `benepar` for parsing            |
-| `textblob`         | 0.17.1      | Simple NLP API for sentiment analysis and noun phrase extraction           |
-| `beautifulsoup4`   | 4.12.3      | For parsing HTML/XML data                                                  |
-| `transformers`     | 4.39.3      | Hugging Face Transformers library (e.g., BERT, GPT, RoBERTa)               |
-| `torch`            | >=2.0.0     | PyTorch backend, required for transformer models                           |
-| `benepar`          | 0.2.0       | Berkeley Neural Parser, used for constituency parsing with spaCy           |
-
+| Package            | Version    | Description                                                                   |
+|--------------------|------------|-------------------------------------------------------------------------------|
+| `nltk`             |  3.8.1     | Natural Language Toolkit for classic NLP tasks like tokenization and POS      |
+| `spacy`            |  3.7.2     | Industrial-strength NLP library used with `benepar` for parsing               |
+| `textblob`         |  0.17.1    | Simple NLP API for sentiment analysis and noun phrase extraction              |
+| `beautifulsoup4`   |  4.12.3    | For parsing HTML/XML data                                                     |
+| `transformers`     |  4.39.3    | Hugging Face Transformers library (e.g., BERT, GPT, RoBERTa)                  |
+| `torch`            |  >=2.0.0   | PyTorch backend, required for transformer models                              |
+| `benepar`          |  0.2.0     | Berkeley Neural Parser, used for constituency parsing with spaCy              |
+| `scikit-learn	`    |  1.4.2     | Machine learning toolkit; used here for `TfidfVectorizer` and classifiers     |
+| `pandas`           |  2.2.2     | Data analysis and manipulation; used for displaying TF-IDF results            |
+| `gensim`           |  4.3.2     | Topic modeling and word embeddings (Word2Vec, FastText, GloVe via downloader) |
+| `scipy`            |	1.12.0    | Scientific computing; used for similarity metrics and matrix operations       |
+| `smart_open`       |	>=6.3.0	  | Streams pretrained GloVe and other large files in gensim                      |
 ## Setup
 1. clone the repository
 ```sh
