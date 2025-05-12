@@ -11,3 +11,6 @@ pandas==2.2.2         # For displaying and sorting TF-IDF results
 gensim==4.3.2
 scipy==1.12.0
 # allennlp
+
+# For GloVe (used via gensim.downloader)
+smart_open>=6.3.0        # Required by gensim to stream pretrained GloVe

@@ -412,9 +412,16 @@ This model maps each word to a 300-dimensional vector trained on Google News.
     ```text
         datascience is OOV (Out-of-Vocabulary)
     ```
-#### There are several popular algorithms to generate word embeddings:
-- **word2vec**: Uses a shallow neural network to predict word relationships based on context. Includes CBOW (predicts a word from its context) and Skip-gram (predicts context from a word).
-- **GloVe (Global Vectors)**: Builds word vectors based on global word co-occurrence statistics from a corpus.
+#### Several popular algorithms to generate word embeddings:
+There are several widely used algorithms to generate word embeddings. These methods differ in how they capture the meaning and context of words:
+
+1. **word2vec**: 
+A shallow neural network that learns word associations based on local context in a corpus. It offers two architectures:
+- **CBOW**(Continuous Bag of Words): Predicts a target word from its surrounding context.
+- **Skip-gram**: Predicts surrounding words from a target word.
+                These embeddings are **static** (same vector regardless of sentence).
+2. **GloVe (Global Vectors)**:
+Constructs word embeddings by factoring a word co-occurrence matrix across the entire corpus. It captures **global statistical information** and produces **static embeddings** like word2vec, but based on overall co-occurrence patterns.
 - **FastText**: Extends word2vec by including subword (character n-gram) information to better handle rare and misspelled words.
 - **ELMo**: Produces context-dependent embeddings using a bidirectional LSTM trained on a language modeling objective.
 #### 🧠 Why Word Embeddings Matter
