@@ -107,6 +107,7 @@ The complexity and variety of human language create numerous difficult problems 
 - Example: "He saw a bat in the dark."
     - **Why it’s hard**: The word **"bat"** can mean an **animal** or a **sports object**. Determining which meaning is correct requires understanding the **context**.
     - **What we do**: We use spaCy to analyze each token’s **part of speech (POS)** and lemma to explore how it processes such ambiguity.
+
 #### Challenge 2: Ambiguity (Lexical & Syntactic)
 - Example: "She couldn't bear the pain."
 
@@ -125,7 +126,6 @@ The complexity and variety of human language create numerous difficult problems 
         “Emma went to the store. She bought apples.”
         - Here, “She” refers to “Emma”. This is a coreference relationship.
 
-
 #### Challenge 4: Language Diversity
 - Example: `"मैं घर जा रहा हूँ।"` (Hindi for “I am going home.”)
     - **Why it’s hard**: Most NLP models are trained on English. When given non-English input, models often fail.
@@ -134,9 +134,7 @@ The complexity and variety of human language create numerous difficult problems 
 
 #### Challenge 5: Data Limitations and Bias
 - Example: `"The nurse helped the doctor because she was tired."`
-
     - **Why it’s hard**: NLP systems often learn societal biases from training data (e.g., assuming "nurse" = female).
-
     - **What we do**: Show the dependency parse and discuss how gender pronouns often reinforce stereotypes in text understanding.
     - **Real-world impact**: Bias can lead to unethical outputs in tasks like resume screening, chatbots, and search.
 
@@ -163,11 +161,8 @@ A **token** is the smallest unit in a text that carries meaning. Depending on th
 - Text Normalization:
 
     - Lowercasing
-
     - Lemmatization
-
     - Stemming
-
     - Date/Time normalization
 
 - Punctuation/Special Character Removal
@@ -177,6 +172,7 @@ A **token** is the smallest unit in a text that carries meaning. Depending on th
 - Spell Correction
 
 - Sentence Segmentation
+
 ### 5. Part-of-Speech (POS) Tagging in NLP
 **Part-of-speech tagging** is the process of assigning grammatical categories (like noun, verb, adjective) to each word in a sentence. It’s essential for understanding sentence structure and meaning.
 
@@ -311,6 +307,7 @@ S
 │           └── NN: mat
 
 ```
+
 - **Dependency Parsing:**
 Dependency parsing builds a directed graph where:
 
@@ -327,7 +324,6 @@ It shows grammatical relations (like subject → verb, verb → object)
 | on       | sat      | preposition (prep)                  |
 | the      | mat      | determiner                          |
 | mat      | on       | object of preposition (pobj)        |
-
 
 - **Top-Down Parsing**:
 Top-down parsing starts at the root of the parse tree (S = Sentence) and recursively applies grammar rules to predict what should come next (i.e., expand S → NP + VP).
@@ -369,6 +365,7 @@ TF-IDF is a way to numerically represent text data — used widely in Natural La
 TF measures how often a word appears in a document.
 - Formula:
 **TF(t, d)** = (Number of times term *t* appears in document *d*) / (Total number of terms in document *d*)
+
 #### What is **Inverse Document Frequency (IDF)?**
 IDF measures how unique or rare a word is across **all documents** in the corpus.
 - Formula:
@@ -376,22 +373,21 @@ IDF measures how unique or rare a word is across **all documents** in the corpus
 Where:
 - *N* = Total number of documents  
 - *df(t)* = Number of documents containing term *t*
-### 🧾 Example:
-If "cat" appears in 2 out of 3 documents:
 
+#### 🧾 Example:
+If "cat" appears in 2 out of 3 documents:
 **IDF("cat")** = log( 3 / (1 + 2) ) = log(1) = **0**
 
 > 🔸 So common words get **low IDF scores**, while rare ones get **high scores**.
+
 #### 🧠 How Is TF-IDF Used in NLP?
 TF-IDF is used to convert text into numbers that can be used for:
 
 - 🧪 Text classification (e.g., spam detection)
-
 - 🗂 Information retrieval (e.g., search engines)
-
 - 📊 Clustering or topic modeling
-
 - 🤖 Machine learning models that take numerical input
+
 #### 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.
 
@@ -400,10 +396,11 @@ Words like "the" and "is" appear everywhere → low IDF → low TF-IDF.
 
 Words like "machine", "neural" appear in some docs but not all → higher IDF → useful for distinguishing docs.
 
-🧮 TF-IDF Score = TF × IDF
+#### 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.
 
 ### 12. Machine Learning Algorithms used in NLP
+
 #### Naive Bayes
 - **Type**: Probabilistic classifier based on Bayes' Theorem.
 - How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
@@ -434,7 +431,6 @@ Words that appear often in a document but rarely elsewhere get a high score.
     - Used `SVC` with a linear kernel and TfidfVectorizer.
     - All samples became support vectors — common when you have very few, diverse inputs.
     - The model predicted `NLP is bad` as positive, because `NLP` had stronger TF-IDF weights than `bad` and was associated with positive classes in training.
-
 
 #### Decision Trees
 - **Type**: Rule-based supervised learning model.
@@ -498,6 +494,7 @@ Each block includes skip connections (residuals) and layer normalization to stab
 
 ### 14. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
+
 #### 🔧 How it Works (Demo Summary)
 In this project, we used `gensim.downloader` to load the pre-trained word2vec-google-news-300 model and explored embeddings with:
 ```python
@@ -597,7 +594,6 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 
         - Fine-tune entire model + new head using task-specific labeled data.
 
-
 #### 🔍 15.3 Summary Table
 | Component         | Details                                                         |
 | ----------------- | --------------------------------------------------------------- |
@@ -634,19 +630,18 @@ SMT systems translate by using probability and statistics derived from large ali
 
 - 🧠**How it works**:
     - Align source and target sentences
-
     - Learn probability distributions of phrase translations
-
     - Use language models to ensure fluency
-
     - Translation = most probable target sentence given source
+
 - 💡**Key Concepts**:
     - Phrase-based SMT: Translates phrases rather than individual words
-
     - Language Model (LM): Helps ensure fluent output (e.g., “a red car” is more likely than “a car red”)
+
 - ✅ **Pros**:
     - Data-driven, adaptable to new languages with corpora
     - Outperforms RBMT in general cases
+
 - ❌ **Cons**:
     - Still **rule-blind** (just statistical co-occurrence)
     - Needs huge datasets
