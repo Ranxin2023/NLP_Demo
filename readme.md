@@ -9,6 +9,7 @@
     - [Preprocessing](#4-what-are-some-common-preprocessing-techniques-used-in-nlp)
     - [Part of Speech](#5-part-of-speech-pos-tagging-in-nlp)
     - [Three Approaches](#7-what-are-the-differences-between-rule-based-statistical-based-and-neural-based-approaches-in-nlp)
+    - [NLTK Package](#8-nltk-natural-language-toolkit)
     - [Bag of Words](#9-what-is-the-bag-of-words-bow-model)
     - [Parsing in NLP](#10-what-are-the-different-types-of-parsing-in-nlp)
     - [TF IDF](#11-what-is-tf-idf-in-nlp)
@@ -289,7 +290,7 @@ Doc2: "I love mangoes too." → [1, 1, 0, 1, 1]
 - **Why Use BoW?**:
 BoW transforms human language into a form that machine learning models can understand.
 
-### 9. What are the different types of parsing in NLP?
+### 10. What are the different types of parsing in NLP?
 Constituency Parsing, Dependency Parsing, Top-down Parsing, Bottom-up Parsing
 - **Constituency Parsing:**
 Constituency parsing breaks down a sentence into nested phrases (or constituents) using a context-free grammar (CFG). The output is a tree where:
