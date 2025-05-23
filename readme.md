@@ -535,33 +535,42 @@ Unlike earlier models like GPT (which are left-to-right), BERT reads text in **b
 **Example**:
 Sentence: `"The bank raised the interest rate."`
 
-- Left-to-right model: sees “The bank raised the...”
+    - Left-to-right model: sees “The bank raised the...”
 
-- BERT: sees both “The bank raised...” and “...the interest rate.” simultaneously.
+    - BERT: sees both “The bank raised...” and “...the interest rate.” simultaneously.
 
 This enables BERT to **understand context deeply**, especially for polysemous words (words with multiple meanings).
 - 3. **Input Representation**:
-- Each input to BERT is a combination of:
-    - **Token embeddings** (from WordPiece tokenizer)
-    - **Segment embeddings** (to differentiate Sentence A from Sentence B)
-    - **Position embeddings** (to capture order)
+    - Each input to BERT is a combination of:
+        - **Token embeddings** (from WordPiece tokenizer)
+        - **Segment embeddings** (to differentiate Sentence A from Sentence B)
+        - **Position embeddings** (to capture order)
 
 - 4. **Pretraining Tasks**:
-BERT is pretrained on large corpora (like Wikipedia and BooksCorpus) using two unsupervised tasks:
-- **(a) Masked Language Modeling (MLM)**:
-    - Randomly masks 15% of input tokens
-    - Model must predict the masked words using context from both sides
-- **(b) Next Sentence Prediction (NSP)**:
-    - Given a pair of sentences, predict if the second sentence logically follows the first.
-    ```text
-        Sentence A: "She opened the book."
-        Sentence B: "It was her favorite novel." → Label: True
+    - BERT is pretrained on large corpora (like Wikipedia and BooksCorpus) using two unsupervised tasks:
+    - **(a) Masked Language Modeling (MLM)**:
+        - Randomly masks 15% of input tokens
+        - Model must predict the masked words using context from both sides
+    - **(b) Next Sentence Prediction (NSP)**:
+        - Given a pair of sentences, predict if the second sentence logically follows the first.
+        ```text
+            Sentence A: "She opened the book."
+            Sentence B: "It was her favorite novel." → Label: True
 
-        Sentence B: "He went to the store." → Label: False
+            Sentence B: "He went to the store." → Label: False
 
     ```
+- 5. **Fine-tuning for Downstream Tasks**
+    - Once pretrained, BERT can be fine-tuned by adding a task-specific layer on top (e.g., classification head) and training on a smaller dataset.
 
-#### 🔍 14.4 Summary Table
+    - Example fine-tuning:
+
+        - Add a classification head on top of [CLS] token's representation.
+
+        - Fine-tune entire model + new head using task-specific labeled data.
+
+
+#### 🔍 14.3 Summary Table
 | Component         | Details                                                         |
 | ----------------- | --------------------------------------------------------------- |
 | Architecture      | Transformer Encoder (only)                                      |
