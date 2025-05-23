@@ -5,6 +5,21 @@
 - [Concepts](#nlp-concepts):
     - [What is NLP](#1-what-is-nlp)
     - [What are the main challenges of NLP](#2-what-are-the-main-challenges-in-nlp)
+    - [Tokenization in NLP](#3-tokenization-in-nlp)
+    - [Preprocessing](#4-what-are-some-common-preprocessing-techniques-used-in-nlp)
+    - [Part of Speech](#5-part-of-speech-pos-tagging-in-nlp)
+    - [Three Approaches](#7-what-are-the-differences-between-rule-based-statistical-based-and-neural-based-approaches-in-nlp)
+    - [Bag of Words](#8-what-is-the-bag-of-words-bow-model)
+    - [Parsing in NLP](#9-what-are-the-different-types-of-parsing-in-nlp)
+    - [TF IDF](#10-what-is-tf-idf-in-nlp)
+    - [Machine Learning Algorithms](#11-machine-learning-algorithms-used-in-nlp)
+    - [Transformer](#12-transfomers)
+    - [Word Embeddings](#13-word-embeddings)
+    - [BERT](#14-bert)
+    - [Sequence Labeling](#15-what-is-sequence-labeling)
+- [Python Dependencies](#-python-dependencies)
+- [Setup](#setup)
+
 ## Intruduction
 This project is a hands-on demo of various Natural Language Processing (NLP) techniques, organized in modular Python scripts. It walks through fundamental concepts such as preprocessing, normalization, text classification, lemmatization, different NLP model approaches, and more.
 
