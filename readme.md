@@ -9,16 +9,16 @@
     - [Preprocessing](#4-what-are-some-common-preprocessing-techniques-used-in-nlp)
     - [Part of Speech](#5-part-of-speech-pos-tagging-in-nlp)
     - [Three Approaches](#7-what-are-the-differences-between-rule-based-statistical-based-and-neural-based-approaches-in-nlp)
-    - [Bag of Words](#8-what-is-the-bag-of-words-bow-model)
-    - [Parsing in NLP](#9-what-are-the-different-types-of-parsing-in-nlp)
-    - [TF IDF](#10-what-is-tf-idf-in-nlp)
-    - [Machine Learning Algorithms](#11-machine-learning-algorithms-used-in-nlp)
-    - [Transformer](#12-transfomers)
-    - [Word Embeddings](#13-word-embeddings)
-    - [BERT](#14-bert)
-    - [Sequence Labeling](#15-what-is-sequence-labeling)
-    - [Machine Translation](#16-machine-translation)
-- [Python Dependencies](#-python-dependencies)
+    - [Bag of Words](#9-what-is-the-bag-of-words-bow-model)
+    - [Parsing in NLP](#10-what-are-the-different-types-of-parsing-in-nlp)
+    - [TF IDF](#11-what-is-tf-idf-in-nlp)
+    - [Machine Learning Algorithms](#12-machine-learning-algorithms-used-in-nlp)
+    - [Transformer](#13-transfomers)
+    - [Word Embeddings](#14-word-embeddings)
+    - [BERT](#15-bert)
+    - [Sequence Labeling](#16-what-is-sequence-labeling)
+    - [Machine Translation](#17-machine-translation)
+- [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
 
 ## Intruduction
@@ -222,20 +222,47 @@ pos_tag(word_tokenize("The quick brown fox jumps over the lazy dog"))
 - **Statistical-Based Approach:**
 
     - Learns from statistical patterns in labeled data.
-
     - Example: Naive Bayes for sentiment classification.
-
     - Flexible and scalable with enough data.
 
 - **Neural-Based Approach:**
 
     - Uses deep learning models like BERT, GPT.
-
     - Learns hierarchical language features automatically.
-
     - High performance, especially with large datasets.
 
-### 8. What is the **Bag-of-Words (BoW)** Model? 
+### 8. NLTK: Natural Language Toolkit
+#### 📦 What is NLTK?
+NLTK stands for **Natural Language Toolkit**. It is a powerful, open-source Python library for Natural Language Processing (NLP). Developed at the University of Pennsylvania, NLTK provides tools and resources for working with human language data (text), making it one of the most widely used libraries in education and research.
+- 📌 Official Website: https://www.nltk.org
+- 🐍 Language: Python
+- 👨‍🏫 Primary Audience: Students, educators, researchers, beginners
+#### 📚 Educational Focus
+NLTK is often called a "teaching toolkit" because:
+- It includes **built-in corpora and lexical resources**, like WordNet.
+- It comes with **detailed documentation and examples**.
+- It’s ideal for **learning NLP concepts** without needing huge datasets or deep learning infrastructure.
+
+#### 🛠️ What Can You Do with NLTK?
+| Task                         | Description                                  |
+| ---------------------------- | -------------------------------------------- |
+| **Tokenization**             | Split text into words or sentences           |
+| **Stemming & Lemmatization** | Reduce words to their root form              |
+| **Part-of-Speech Tagging**   | Identify nouns, verbs, adjectives, etc.      |
+| **Parsing & Syntax Trees**   | Understand grammar and structure             |
+| **Named Entity Recognition** | Detect entities like names, dates, locations |
+| **Corpora Access**           | Load sample datasets like Gutenberg, Brown   |
+| **Language Modeling**        | Create n-gram models and generate text       |
+| **Text Classification**      | Build Naive Bayes or other classifiers       |
+
+#### ✅ When to Use NLTK
+| Use NLTK If...                           | Consider Alternatives If...                          |
+| ---------------------------------------- | ---------------------------------------------------- |
+| You are **learning** NLP or linguistics  | You need **high performance** at scale (e.g., spaCy) |
+| You want to **prototype quickly**        | You need **neural embeddings or transformers**       |
+| You need access to **classic NLP tools** | You want **modern, deep-learning-based NLP**         |
+
+### 9. What is the **Bag-of-Words (BoW)** Model? 
 BoW is one of the simplest and most widely used techniques to convert text into numerical feature vectors.
 How It Works (Step-by-Step):
 - **Tokenization**:
@@ -328,7 +355,7 @@ S
 
 ```
 
-### 10. What is TF-IDF in NLP?
+### 11. What is TF-IDF in NLP?
 **TF-IDF** stands for:
 
 - TF: Term Frequency
@@ -375,7 +402,7 @@ Words like "machine", "neural" appear in some docs but not all → higher IDF �
 🧮 TF-IDF Score = TF × IDF
 Words that appear often in a document but rarely elsewhere get a high score.
 
-### 11. Machine Learning Algorithms used in NLP
+### 12. Machine Learning Algorithms used in NLP
 #### Naive Bayes
 - **Type**: Probabilistic classifier based on Bayes' Theorem.
 - How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
@@ -441,7 +468,7 @@ Words that appear often in a document but rarely elsewhere get a high score.
 - **Common Use**: BERT, GPT, and similar models for classification, translation, Q&A, summarization.
 - **Pros**: State-of-the-art results; captures long-range dependencies better than LSTMs/RNNs.
 
-### 12. Transfomers
+### 13. Transfomers
 #### What is transformer in NLP
 The Transformer is a deep learning architecture introduced in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762). It has become the foundation of modern NLP models like BERT, GPT, and RoBERTa.
 
@@ -468,7 +495,7 @@ After self-attention, each token's vector goes through a fully connected feedfor
 6. **Residual Connections + Layer Normalization**
 Each block includes skip connections (residuals) and layer normalization to stabilize training.
 
-### 13. Word Embeddings
+### 14. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
 #### 🔧 How it Works (Demo Summary)
 In this project, we used `gensim.downloader` to load the pre-trained word2vec-google-news-300 model and explored embeddings with:
@@ -522,12 +549,12 @@ Constructs word embeddings by factoring a word co-occurrence matrix across the e
 
 - `redirect_stderr` to silence progress bar clutter.
 
-### 14. BERT
-#### 14.1 🧠 What is BERT?
+### 15. BERT
+#### 15.1 🧠 What is BERT?
 BERT is a **pre-trained deep learning model for natural language understanding** developed by Google in 2018. 
 It marked a major breakthrough because it introduced bidirectional context using the **Transformer encoder architecture**.
 **Full Name**: Bidirectional Encoder Representations from Transformers
-#### 14.2 ⚙️ How BERT Works – Step by Step
+#### 15.2 ⚙️ How BERT Works – Step by Step
 - 1. **Transformer Encoder Architecture**:
 BERT uses only the **encoder part** of the Transformer (from the original "Attention is All You Need" paper). The encoder focuses on capturing contextual relationships between words in a sentence.
 - 2. **Bidirectional Attention**:
@@ -570,7 +597,7 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
         - Fine-tune entire model + new head using task-specific labeled data.
 
 
-#### 🔍 14.3 Summary Table
+#### 🔍 15.3 Summary Table
 | Component         | Details                                                         |
 | ----------------- | --------------------------------------------------------------- |
 | Architecture      | Transformer Encoder (only)                                      |
@@ -581,14 +608,14 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 | Strengths         | Deep context, state-of-the-art accuracy, easy transfer learning |
 | Limitations       | Large size, expensive to train from scratch                     |
 
-### 15. What is Sequence Labeling?
+### 16. What is Sequence Labeling?
 #### 2. Named Entity Recognition (NER)
 Recognizes and classifies **named entities** (real-world objects) into predefined categories:
 #### 3. Chunking (Shallow Parsing)
 Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
 🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
 
-### 16. Machine Translation
+### 17. Machine Translation
 Machine translation is the process of automatically translating text or speech from one language to another using a computer or machine learning model.
 
 There are three techniques for machine translation:
@@ -621,13 +648,9 @@ SMT systems translate by using probability and statistics derived from large ali
     - Outperforms RBMT in general cases
 - ❌ **Cons**:
     - Still **rule-blind** (just statistical co-occurrence)
-
     - Needs huge datasets
-
     - Outputs often lack fluency or naturalness
-
     - Cannot easily handle long-range dependencies
-
 
 #### 🧠 3. Neural Machine Translation (NMT)
 - 📌 **Concept**:
