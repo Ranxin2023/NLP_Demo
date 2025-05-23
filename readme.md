@@ -1,4 +1,10 @@
 # NLPDEMO: Natural Language Processing Hands-On Project
+## Table of Contents
+- [Introduction](#intruduction)
+- [Project Structure](#project-structure)
+- [Concepts](#nlp-concepts):
+    - [What is NLP](#1-what-is-nlp)
+    - [What are the main challenges of NLP](#2-what-are-the-main-challenges-in-nlp)
 ## Intruduction
 This project is a hands-on demo of various Natural Language Processing (NLP) techniques, organized in modular Python scripts. It walks through fundamental concepts such as preprocessing, normalization, text classification, lemmatization, different NLP model approaches, and more.
 
