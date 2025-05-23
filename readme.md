@@ -583,8 +583,7 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
             Sentence B: "It was her favorite novel." → Label: True
 
             Sentence B: "He went to the store." → Label: False
-
-    ```
+        ```
 - 5. **Fine-tuning for Downstream Tasks**
     - Once pretrained, BERT can be fine-tuned by adding a task-specific layer on top (e.g., classification head) and training on a smaller dataset.
 
