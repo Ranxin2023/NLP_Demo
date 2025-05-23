@@ -1,6 +1,7 @@
-from gensim.models import word2vec
+from gensim.models import Word2Vec
 
 def word2vec_demo():
+    print("word2vec demo......")
     sentences = [
     ["nlp", "is", "fun"],
     ["deep", "learning", "is", "a", "subset", "of", "machine", "learning"],
@@ -8,8 +9,12 @@ def word2vec_demo():
     ]
 
     # Train Word2Vec model
-    word2vec_model = word2vec(sentences, vector_size=50, window=3, min_count=1, workers=2)
+    word2vec_model = Word2Vec(sentences, vector_size=50, window=3, min_count=1, workers=2)
 
-    # Get embedding for a word
-    print("Word2Vec Embedding for 'nlp':")
-    print(word2vec_model.wv['nlp'])
+    # Define words to inspect
+    target_words = ["nlp", "fun", "learning", "semantic", "machine", "embeddings"]
+
+    # Print embeddings
+    for word in target_words:
+        print(f"\nEmbedding for '{word}':")
+        print(word2vec_model.wv[word])

@@ -464,7 +464,57 @@ Constructs word embeddings by factoring a word co-occurrence matrix across the e
 
 - `redirect_stderr` to silence progress bar clutter.
 
-### 14.  What is Sequence Labeling?
+### 14. BERT
+#### 14.1 🧠 What is BERT?
+BERT is a **pre-trained deep learning model for natural language understanding** developed by Google in 2018. 
+It marked a major breakthrough because it introduced bidirectional context using the **Transformer encoder architecture**.
+**Full Name**: Bidirectional Encoder Representations from Transformers
+#### 14.2 ⚙️ How BERT Works – Step by Step
+- 1. **Transformer Encoder Architecture**:
+BERT uses only the **encoder part** of the Transformer (from the original "Attention is All You Need" paper). The encoder focuses on capturing contextual relationships between words in a sentence.
+- 2. **Bidirectional Attention**:
+Unlike earlier models like GPT (which are left-to-right), BERT reads text in **both directions**.
+**Example**:
+Sentence: `"The bank raised the interest rate."`
+
+- Left-to-right model: sees “The bank raised the...”
+
+- BERT: sees both “The bank raised...” and “...the interest rate.” simultaneously.
+
+This enables BERT to **understand context deeply**, especially for polysemous words (words with multiple meanings).
+- 3. **Input Representation**:
+- Each input to BERT is a combination of:
+    - **Token embeddings** (from WordPiece tokenizer)
+    - **Segment embeddings** (to differentiate Sentence A from Sentence B)
+    - **Position embeddings** (to capture order)
+
+- 4. **Pretraining Tasks**:
+BERT is pretrained on large corpora (like Wikipedia and BooksCorpus) using two unsupervised tasks:
+- **(a) Masked Language Modeling (MLM)**:
+    - Randomly masks 15% of input tokens
+    - Model must predict the masked words using context from both sides
+- **(b) Next Sentence Prediction (NSP)**:
+    - Given a pair of sentences, predict if the second sentence logically follows the first.
+    ```text
+        Sentence A: "She opened the book."
+        Sentence B: "It was her favorite novel." → Label: True
+
+        Sentence B: "He went to the store." → Label: False
+
+    ```
+
+#### 🔍 14.4 Summary Table
+| Component         | Details                                                         |
+| ----------------- | --------------------------------------------------------------- |
+| Architecture      | Transformer Encoder (only)                                      |
+| Context           | **Bidirectional**                                               |
+| Tokenization      | WordPiece with `[CLS]`, `[SEP]`, and `[MASK]` tokens            |
+| Pretraining Tasks | Masked Language Modeling (MLM), Next Sentence Prediction (NSP)  |
+| Fine-tuning       | Add task-specific layers; train entire model                    |
+| Strengths         | Deep context, state-of-the-art accuracy, easy transfer learning |
+| Limitations       | Large size, expensive to train from scratch                     |
+
+### 15. What is Sequence Labeling?
 #### 2. Named Entity Recognition (NER)
 Recognizes and classifies **named entities** (real-world objects) into predefined categories:
 #### 3. Chunking (Shallow Parsing)
@@ -489,6 +539,7 @@ Below are the main libraries required to run this NLP demo project:
 | `gensim`           |  4.3.2     | Topic modeling and word embeddings (Word2Vec, FastText, GloVe via downloader) |
 | `scipy`            |	1.12.0    | Scientific computing; used for similarity metrics and matrix operations       |
 | `smart_open`       |	>=6.3.0	  | Streams pretrained GloVe and other large files in gensim                      |
+
 ## Setup
 1. clone the repository
 ```sh

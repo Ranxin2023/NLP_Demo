@@ -48,11 +48,11 @@ def main():
     # bow_demo()
     # tf_idf()
     # ML_algorithms()
-    word_embedding_demo()
+    # word_embedding_demo()
     # tagging_demo()
     # SRL_demo()
     # transfomer_datacamp()
-    # word_embeddings_algorithms()
+    word_embeddings_algorithms()
     
 if __name__=='__main__':
     main()
