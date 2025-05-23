@@ -1,0 +1,3 @@
+RBMT: 机器 翻译 是 棒极了
+SMT: 机器翻译 非常棒
+NMT (English → Chinese): 机器翻译太棒了

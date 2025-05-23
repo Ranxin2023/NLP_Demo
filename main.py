@@ -2,6 +2,7 @@
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
+# demo code importing
 from demo_code.GeneralNLP.nlp_challenges import nlp_challenges
 from demo_code.GeneralNLP.nlp_tasks import nlp_tasks
 from demo_code.GeneralNLP.preprocessing import preprocessing_demo
@@ -16,8 +17,9 @@ from demo_code.ML_in_NLP.ML_algorithms import ML_algorithms
 from demo_code.Word_Embeddings.word_embeddings import word_embedding_demo
 from demo_code.Sequence_Labelling.tagging_demo import tagging_demo
 from demo_code.Sequence_Labelling.semantic_role_labeling import SRL_demo
-from demo_code.ML_in_NLP.transformer.Transfomer import transfomer_datacamp
+from demo_code.ML_in_NLP.Transformer.transformer_demo import transfomer_datacamp
 from demo_code.Word_Embeddings.word_embedding_algorithms import word_embeddings_algorithms
+from demo_code.NLPUtils.translation_demo import translation_demo
 def tokenization_demo():
     # Download required NLTK data files (only need to do this once)
     nltk.download('punkt')
@@ -52,7 +54,8 @@ def main():
     # tagging_demo()
     # SRL_demo()
     # transfomer_datacamp()
-    word_embeddings_algorithms()
+    # word_embeddings_algorithms()
+    translation_demo()
     
 if __name__=='__main__':
     main()
