@@ -17,6 +17,7 @@
     - [Word Embeddings](#13-word-embeddings)
     - [BERT](#14-bert)
     - [Sequence Labeling](#15-what-is-sequence-labeling)
+    - [Machine Translation](#16-machine-translation)
 - [Python Dependencies](#-python-dependencies)
 - [Setup](#setup)
 
@@ -591,9 +592,63 @@ RBMT systems translate text based on **manually defined linguistic rules** and *
 dictionary = {"hello": "bonjour", "world": "monde"}
 ``` 
 ####  2. Statistical Machine Translation (SMT)
-#### 🧠 3. Neural Machine Translation (NMT)
 - 📌 Concept:
+SMT systems translate by using probability and statistics derived from large aligned bilingual corpora (e.g., English-French sentence pairs). These systems learn patterns based on how often words or phrases co-occur.
+
+- 🧠**How it works**:
+    - Align source and target sentences
+
+    - Learn probability distributions of phrase translations
+
+    - Use language models to ensure fluency
+
+    - Translation = most probable target sentence given source
+- 💡**Key Concepts**:
+    - Phrase-based SMT: Translates phrases rather than individual words
+
+    - Language Model (LM): Helps ensure fluent output (e.g., “a red car” is more likely than “a car red”)
+- ✅ **Pros**:
+    - Data-driven, adaptable to new languages with corpora
+    - Outperforms RBMT in general cases
+- ❌ **Cons**:
+    - Still **rule-blind** (just statistical co-occurrence)
+
+    - Needs huge datasets
+
+    - Outputs often lack fluency or naturalness
+
+    - Cannot easily handle long-range dependencies
+
+
+#### 🧠 3. Neural Machine Translation (NMT)
+- 📌 **Concept**:
 NMT uses **deep learning models**, particularly **sequence-to-sequence architectures** and **Transformers**, to learn to translate from large datasets. It captures meaning and context more holistically.
+- 🧠 **How it works**:
+    - Input sentence → tokenized (e.g., subwords)
+    - Encoder processes sentence → creates vector representation
+    - Decoder generates translation token-by-token
+    - Attention mechanism allows model to focus on relevant parts of input during decoding
+- 🔬 **Key Tech**:
+    - **Transformer** architecture (BERT, GPT, T5, MarianMT)
+    - **Word embeddings** to capture meaning
+    - **Attention** to focus on the right parts of input
+- 🔧 **Tools**:
+    - Hugging Face Transformers (e.g., `Helsinki-NLP/opus-mt-en-fr`)
+    - Fairseq, OpenNMT, Tensor2Tensor
+- ✅ **Pros**:
+    - Best-in-class fluency and accuracy
+
+    - Captures long-distance dependencies
+
+    - Learns language patterns automatically
+- ❌ **Cons**:
+    - Requires a lot of data and compute to train
+
+    - Can be opaque (not easily interpretable)
+
+    - Sometimes hallucinates (outputs fluent but incorrect translations)
+
+   
 ## 🧩 Python Dependencies
 
 Below are the main libraries required to run this NLP demo project:
