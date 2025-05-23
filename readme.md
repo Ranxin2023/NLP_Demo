@@ -125,13 +125,13 @@ The complexity and variety of human language create numerous difficult problems 
         - Here, “She” refers to “Emma”. This is a coreference relationship.
 
 
-### Challenge 4: Language Diversity
+#### Challenge 4: Language Diversity
 - Example: `"मैं घर जा रहा हूँ।"` (Hindi for “I am going home.”)
     - **Why it’s hard**: Most NLP models are trained on English. When given non-English input, models often fail.
     - **What we do**: Feed a Hindi sentence to spaCy's English model and show it fails to assign meaningful POS tags.
     - **Real-world impact**: Lack of multilingual support limits accessibility of NLP tools for non-English speakers.
 
-### Challenge 5: Data Limitations and Bias
+#### Challenge 5: Data Limitations and Bias
 - Example: `"The nurse helped the doctor because she was tired."`
 
     - **Why it’s hard**: NLP systems often learn societal biases from training data (e.g., assuming "nurse" = female).
