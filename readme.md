@@ -80,6 +80,22 @@ Natural Language Processing (NLP) is a subfield of Artificial Intelligence that 
 
 ### 2. What are the main challenges in NLP?
 
+
+### 3. Tokenization in NLP
+#### 3.1   What is a Token?
+A **token** is the smallest unit in a text that carries meaning. Depending on the level of tokenization, a token could be:
+- A word (e.g., “tokenization”)
+
+- A subword (e.g., “token”, “##ization” in BERT)
+
+- A character (e.g., “t”, “o”, “k”, ...)
+#### 3.2 types of token
+| Type                       | Description                                                              | Example                                     |
+| -------------------------- | ------------------------------------------------------------------------ | ------------------------------------------- |
+| **Word Tokenization**      | Splits text by words, considering punctuation and spacing                | `"NLP is great"` → `["NLP", "is", "great"]` |
+| **Subword Tokenization**   | Breaks rare or complex words into frequent sub-units (used in BERT, GPT) | `"tokenization"` → `["token", "##ization"]` |
+| **Character Tokenization** | Breaks every character                                                   | `"NLP"` → `["N", "L", "P"]`                 |
+
 ### 4. What are some common preprocessing techniques used in NLP?
 - Tokenization: Splitting text into words or phrases.
 
