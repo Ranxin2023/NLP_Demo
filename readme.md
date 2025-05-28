@@ -18,7 +18,7 @@
     - [Word Embeddings](#14-word-embeddings)
     - [BERT](#15-bert)
     - [Sequence Labeling](#16-what-is-sequence-labeling)
-    - [Machine Translation](#17-machine-translation)
+    - [Machine Translation](#18-machine-translation)
 - [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
 
@@ -611,7 +611,44 @@ Recognizes and classifies **named entities** (real-world objects) into predefine
 Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
 🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
 
-### 17. Machine Translation
+### 17. OOV(Out-of-Vocabulary)Words
+#### 🧠 What Are OOV Words?
+#### ✅ Techniques to Handle OOV Words
+- **Character-Level Models**:
+    - **What It Is**: Character-level models represent text **one character at a time,** instead of by full words or subwords.
+    - **How It Works**: 
+        - Input: `"xenobot"` → `["x", "e", "n", "o", "b", "o", "t"]`
+        - The model learns **character sequences** rather than whole-word meanings.
+        - It can generalize to OOV words **if they contain familiar patterns**.
+- **Subword Tokenization (BPE, WordPiece)**:
+    - Instead of full words, text is broken into **frequent subword units** using algorithms like:
+        - **Byte Pair Encoding** (BPE): Used in GPT
+        - **WordPiece**: Used in BERT
+        - **Unigram**: Used in SentencePiece and T5
+- **Unknown Token ([UNK])**:
+    - **📌 What It Is**:
+        - Use a special placeholder token like `[UNK]` to represent any OOV word.
+    - **🛠️ How It Works:**: 
+        - `"xenobot" → [UNK]`
+        - During training or inference, the model substitutes OOVs with this token.
+- **External Knowledge**:
+    - **📌 What It Is**: Use external sources like:
+        - **WordNet**, **Wikipedia**, or knowledge graphs (e.g., DBpedia, ConceptNet)
+        - Custom dictionaries or glossaries
+    - **🛠️ How It Works:**:
+        - When encountering `"neuralink"`, look up its meaning externally.
+        - Integrate this information into model inference.
+- **Fine-Tuning with OOV Data**:
+    - **What It Is**: Retrain or fine-tune a pre-trained model with **examples that contain OOV words**, so it learns their usage.
+    - **🛠️ How It Works**:
+        - Use domain-specific text with new vocabulary.
+        - Fine-tune a language model like BERT or GPT on this data.
+    - **🧠 Why It Helps:**:
+        - The model **learns the context and meaning** of new words.
+        - Becomes more specialized and accurate for the domain.
+    - **✅ Real-World Use Cases:**:
+        - 
+### 18. Machine Translation
 Machine translation is the process of automatically translating text or speech from one language to another using a computer or machine learning model.
 
 There are three techniques for machine translation:

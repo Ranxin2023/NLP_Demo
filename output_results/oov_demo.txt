@@ -1,0 +1,6 @@
+caracter leve models
+Character-level tokens: ['x', 'e', 'n', 'o', 'b', 'o', 't']
+external knowledge......
+Meaning of 'neuralink': OOV word. No definition found.
+Meaning of 'run': a score in baseball made by a runner touching all four bases safely
+Simulated fine-tuning loss: 3.306926965713501
