@@ -1,0 +1,5 @@
+Word Tokenization: ['Tokenization', 'is', 'crucial', 'for', 'NLP', 'tasks', 'like', 'translation', ',', 'summarization', ',', 'and', 'classification', '.']
+
+Character Tokenization: ['T', 'o', 'k', 'e', 'n', 'i', 'z', 'a', 't', 'i', 'o', 'n', ' ', 'i', 's', ' ', 'c', 'r', 'u', 'c', 'i', 'a', 'l', ' ', 'f', 'o', 'r', ' ', 'N', 'L', 'P', ' ', 't', 'a', 's', 'k', 's', ' ', 'l', 'i', 'k', 'e', ' ', 't', 'r', 'a', 'n', 's', 'l', 'a', 't', 'i', 'o', 'n', ',', ' ', 's', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'a', 't', 'i', 'o', 'n', ',', ' ', 'a', 'n', 'd', ' ', 'c', 'l', 'a', 's', 's', 'i', 'f', 'i', 'c', 'a', 't', 'i', 'o', 'n', '.']
+
+Subword Tokenization (BERT): ['token', '##ization', 'is', 'crucial', 'for', 'nl', '##p', 'tasks', 'like', 'translation', ',', 'sum', '##mar', '##ization', ',', 'and', 'classification', '.']

@@ -8,7 +8,7 @@ from demo_code.GeneralNLP.nlp_tasks import nlp_tasks
 from demo_code.GeneralNLP.preprocessing import preprocessing_demo
 from demo_code.NLPUtils.text_normalization import text_normalizaion_demo
 from demo_code.GeneralNLP.three_approaches import three_processing_approach
-from demo_code.NLPUtils.nltk_demo import nltk_demo
+from demo_code.GeneralNLP.nltk_demo import nltk_demo
 from demo_code.NLPUtils.cos_similarity_examples import cos_sililarity_demo
 from demo_code.NLPUtils.parsing_demo import parsing_demo
 from demo_code.NLPUtils.bow_demo import bow_demo
@@ -21,22 +21,7 @@ from demo_code.ML_in_NLP.Transformer.transformer_demo import transfomer_datacamp
 from demo_code.Word_Embeddings.word_embedding_algorithms import word_embeddings_algorithms
 from demo_code.NLPUtils.translation_demo import translation_demo
 from demo_code.NLPUtils.oov_demo import oov_demo
-def tokenization_demo():
-    # Download required NLTK data files (only need to do this once)
-    nltk.download('punkt')
-    nltk.download('averaged_perceptron_tagger')
-
-    # Sample sentence
-    text = "Natural Language Processing enables machines to understand human language."
-
-    # Tokenize the sentence into words
-    tokens = word_tokenize(text)
-
-    # Get Part-of-Speech tags
-    pos_tags = pos_tag(tokens)
-
-    print("Tokens:", tokens)
-    print("POS Tags:", pos_tags)
+from demo_code.NLPUtils.tokenization_demo import tokenization_demo
 
 def main():
     # tokenization_demo()
@@ -57,7 +42,8 @@ def main():
     # transfomer_datacamp()
     # word_embeddings_algorithms()
     # translation_demo()
-    oov_demo()
+    # oov_demo()
+    tokenization_demo()
     
 if __name__=='__main__':
     main()
