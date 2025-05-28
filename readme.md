@@ -18,6 +18,7 @@
     - [Word Embeddings](#14-word-embeddings)
     - [BERT](#15-bert)
     - [Sequence Labeling](#16-what-is-sequence-labeling)
+    - [OOV(out of words)](#17-oovout-of-vocabularywords)
     - [Machine Translation](#18-machine-translation)
 - [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
@@ -620,17 +621,33 @@ Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrase
         - Input: `"xenobot"` → `["x", "e", "n", "o", "b", "o", "t"]`
         - The model learns **character sequences** rather than whole-word meanings.
         - It can generalize to OOV words **if they contain familiar patterns**.
+    - **❌ Limitations:**:
+        - Slower to train and decode.
+        - May lose long-range semantic information.
 - **Subword Tokenization (BPE, WordPiece)**:
     - Instead of full words, text is broken into **frequent subword units** using algorithms like:
         - **Byte Pair Encoding** (BPE): Used in GPT
         - **WordPiece**: Used in BERT
         - **Unigram**: Used in SentencePiece and T5
+    - **🛠️ How It Works:**
+        - `"xenobot"` → `["x", "##eno", "##bot"]`
+        - These subwords exist in the vocabulary even if the full word doesn't.
+    - **🧠 Why It Helps:**:
+        - Allows the model to handle **unknown or compound words**.
+        - Prevents vocabulary from growing too large.
+        - Most modern transformer models use this.
 - **Unknown Token ([UNK])**:
     - **📌 What It Is**:
         - Use a special placeholder token like `[UNK]` to represent any OOV word.
     - **🛠️ How It Works:**: 
         - `"xenobot" → [UNK]`
         - During training or inference, the model substitutes OOVs with this token.
+    - **🧠 Why It Helps**:
+        - Simple and prevents errors/crashes.
+        - Still allows the model to make a **best guess** using surrounding context.
+    - **❌ Limitations**:
+        - Loses all **semantic meaning** of the unknown word.
+        - Can lead to poor or generic predictions.
 - **External Knowledge**:
     - **📌 What It Is**: Use external sources like:
         - **WordNet**, **Wikipedia**, or knowledge graphs (e.g., DBpedia, ConceptNet)
@@ -638,6 +655,12 @@ Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrase
     - **🛠️ How It Works:**:
         - When encountering `"neuralink"`, look up its meaning externally.
         - Integrate this information into model inference.
+    - **🧠 Why It Helps:**:
+        - Useful in domains like **biomedicine**, **law**, or **education**, where models often miss terms.
+        - Supports **explainability** and human-in-the-loop systems.
+    - **❌ Limitations**:
+        - Requires access to a live or pre-built knowledge source.
+        - Integration with models can be complex.
 - **Fine-Tuning with OOV Data**:
     - **What It Is**: Retrain or fine-tune a pre-trained model with **examples that contain OOV words**, so it learns their usage.
     - **🛠️ How It Works**:
@@ -647,7 +670,9 @@ Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrase
         - The model **learns the context and meaning** of new words.
         - Becomes more specialized and accurate for the domain.
     - **✅ Real-World Use Cases:**:
-        - 
+        - **Medical NLP** (new drugs, diseases)
+        - **Tech support bots** (new products)
+        - **ChatGPT fine-tuned for company-specific terminology**
 ### 18. Machine Translation
 Machine translation is the process of automatically translating text or speech from one language to another using a computer or machine learning model.
 
