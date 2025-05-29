@@ -1,5 +1,42 @@
-Word Tokenization: ['Tokenization', 'is', 'crucial', 'for', 'NLP', 'tasks', 'like', 'translation', ',', 'summarization', ',', 'and', 'classification', '.']
 
-Character Tokenization: ['T', 'o', 'k', 'e', 'n', 'i', 'z', 'a', 't', 'i', 'o', 'n', ' ', 'i', 's', ' ', 'c', 'r', 'u', 'c', 'i', 'a', 'l', ' ', 'f', 'o', 'r', ' ', 'N', 'L', 'P', ' ', 't', 'a', 's', 'k', 's', ' ', 'l', 'i', 'k', 'e', ' ', 't', 'r', 'a', 'n', 's', 'l', 'a', 't', 'i', 'o', 'n', ',', ' ', 's', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'a', 't', 'i', 'o', 'n', ',', ' ', 'a', 'n', 'd', ' ', 'c', 'l', 'a', 's', 's', 'i', 'f', 'i', 'c', 'a', 't', 'i', 'o', 'n', '.']
+--- Simple sentence ---
+Original Text: Tokenization is crucial for NLP.
+Word Tokens: ['Tokenization', 'is', 'crucial', 'for', 'NLP', '.']
+Character Tokens: ['T', 'o', 'k', 'e', 'n', 'i', 'z', 'a', 't', 'i', 'o', 'n', ' ', 'i', 's', ' ', 'c', 'r', 'u', 'c', 'i', 'a', 'l', ' ', 'f', 'o', 'r', ' ', 'N', 'L', 'P', '.']
+Subword Tokens (BERT): ['token', '##ization', 'is', 'crucial', 'for', 'nl', '##p', '.']
 
-Subword Tokenization (BERT): ['token', '##ization', 'is', 'crucial', 'for', 'nl', '##p', 'tasks', 'like', 'translation', ',', 'sum', '##mar', '##ization', ',', 'and', 'classification', '.']
+--- Contractions ---
+Original Text: You're going to love it, isn't it?
+Word Tokens: ['You', "'re", 'going', 'to', 'love', 'it', ',', 'is', "n't", 'it', '?']
+Character Tokens: ['Y', 'o', 'u', "'", 'r', 'e', ' ', 'g', 'o', 'i', 'n', 'g', ' ', 't', 'o', ' ', 'l', 'o', 'v', 'e', ' ', 'i', 't', ',', ' ', 'i', 's', 'n', "'", 't', ' ', 'i', 't', '?']
+Subword Tokens (BERT): ['you', "'", 're', 'going', 'to', 'love', 'it', ',', 'isn', "'", 't', 'it', '?']
+
+--- Punctuation ---
+Original Text: Hello!!! How are you?? -- I'm fine...
+Word Tokens: ['Hello', '!', '!', '!', 'How', 'are', 'you', '?', '?', '--', 'I', "'m", 'fine', '...']
+Character Tokens: ['H', 'e', 'l', 'l', 'o', '!', '!', '!', ' ', 'H', 'o', 'w', ' ', 'a', 'r', 'e', ' ', 'y', 'o', 'u', '?', '?', ' ', '-', '-', ' ', 'I', "'", 'm', ' ', 'f', 'i', 'n', 'e', '.', '.', '.']
+Subword Tokens (BERT): ['hello', '!', '!', '!', 'how', 'are', 'you', '?', '?', '-', '-', 'i', "'", 'm', 'fine', '.', '.', '.']
+
+--- Numbers & symbols ---
+Original Text: The price is $9.99, not $10!
+Word Tokens: ['The', 'price', 'is', '$', '9.99', ',', 'not', '$', '10', '!']
+Character Tokens: ['T', 'h', 'e', ' ', 'p', 'r', 'i', 'c', 'e', ' ', 'i', 's', ' ', '$', '9', '.', '9', '9', ',', ' ', 'n', 'o', 't', ' ', '$', '1', '0', '!']
+Subword Tokens (BERT): ['the', 'price', 'is', '$', '9', '.', '99', ',', 'not', '$', '10', '!']
+
+--- Hyphenated words ---
+Original Text: State-of-the-art NLP models are powerful.
+Word Tokens: ['State-of-the-art', 'NLP', 'models', 'are', 'powerful', '.']
+Character Tokens: ['S', 't', 'a', 't', 'e', '-', 'o', 'f', '-', 't', 'h', 'e', '-', 'a', 'r', 't', ' ', 'N', 'L', 'P', ' ', 'm', 'o', 'd', 'e', 'l', 's', ' ', 'a', 'r', 'e', ' ', 'p', 'o', 'w', 'e', 'r', 'f', 'u', 'l', '.']
+Subword Tokens (BERT): ['state', '-', 'of', '-', 'the', '-', 'art', 'nl', '##p', 'models', 'are', 'powerful', '.']
+
+--- Rare compound ---
+Original Text: Xenobot is a synthetic, programmable organism.
+Word Tokens: ['Xenobot', 'is', 'a', 'synthetic', ',', 'programmable', 'organism', '.']
+Character Tokens: ['X', 'e', 'n', 'o', 'b', 'o', 't', ' ', 'i', 's', ' ', 'a', ' ', 's', 'y', 'n', 't', 'h', 'e', 't', 'i', 'c', ',', ' ', 'p', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'a', 'b', 'l', 'e', ' ', 'o', 'r', 'g', 'a', 'n', 'i', 's', 'm', '.']
+Subword Tokens (BERT): ['x', '##eno', '##bot', 'is', 'a', 'synthetic', ',', 'program', '##mable', 'organism', '.']
+
+--- Mixed language ---
+Original Text: 我喜欢 using NLP tools like spaCy or BERT.
+Word Tokens: ['我喜欢', 'using', 'NLP', 'tools', 'like', 'spaCy', 'or', 'BERT', '.']
+Character Tokens: ['我', '喜', '欢', ' ', 'u', 's', 'i', 'n', 'g', ' ', 'N', 'L', 'P', ' ', 't', 'o', 'o', 'l', 's', ' ', 'l', 'i', 'k', 'e', ' ', 's', 'p', 'a', 'C', 'y', ' ', 'o', 'r', ' ', 'B', 'E', 'R', 'T', '.']
+Subword Tokens (BERT): ['我', '[UNK]', '[UNK]', 'using', 'nl', '##p', 'tools', 'like', 'spa', '##cy', 'or', 'bert', '.']

@@ -17,9 +17,9 @@
     - [Transformer](#13-transfomers)
     - [Word Embeddings](#14-word-embeddings)
     - [BERT](#15-bert)
-    - [Sequence Labeling](#16-what-is-sequence-labeling)
     - [OOV(out of words)](#17-oovout-of-vocabularywords)
     - [Machine Translation](#18-machine-translation)
+    - [Sequence Labeling](#19-what-is-sequence-labeling)
 - [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
 
@@ -493,6 +493,7 @@ After self-attention, each token's vector goes through a fully connected feedfor
 6. **Residual Connections + Layer Normalization**
 Each block includes skip connections (residuals) and layer normalization to stabilize training.
 
+
 ### 14. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
 
@@ -550,19 +551,23 @@ Constructs word embeddings by factoring a word co-occurrence matrix across the e
 
 ### 15. BERT
 #### 15.1 🧠 What is BERT?
-BERT is a **pre-trained deep learning model for natural language understanding** developed by Google in 2018. 
-It marked a major breakthrough because it introduced bidirectional context using the **Transformer encoder architecture**.
-**Full Name**: Bidirectional Encoder Representations from Transformers
-#### 15.2 ⚙️ How BERT Works – Step by Step
+BERT (Bidirectional Encoder Representations from Transformers) is a **pretrained language model** developed by Google in 2018. 
+It is based on the **Transformer encoder architecture** and is trained to understand the **context of a word in a sentence by looking both left and right (bidirectional)**.
+
+#### 15.2 📌 Key Characteristics of BERT:
+- 1. **Only uses the Transformer encoder** (not the decoder)
+- 2. **Pretrained on a massive text corpus** (Wikipedia + BookCorpus)
+- 3. **Fine-tunable** on downstream tasks: sentiment analysis, question answering, NER, etc.
+- 4. Uses **[MASK]** token to train via **Masked Language Modeling (MLM)**
+
+#### 15.3 ⚙️ How BERT Works – Step by Step
 - 1. **Transformer Encoder Architecture**:
 BERT uses only the **encoder part** of the Transformer (from the original "Attention is All You Need" paper). The encoder focuses on capturing contextual relationships between words in a sentence.
 - 2. **Bidirectional Attention**:
 Unlike earlier models like GPT (which are left-to-right), BERT reads text in **both directions**.
 **Example**:
-Sentence: `"The bank raised the interest rate."`
-
+- Sentence: `"The bank raised the interest rate."`
     - Left-to-right model: sees “The bank raised the...”
-
     - BERT: sees both “The bank raised...” and “...the interest rate.” simultaneously.
 
 This enables BERT to **understand context deeply**, especially for polysemous words (words with multiple meanings).
@@ -605,12 +610,8 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 | Strengths         | Deep context, state-of-the-art accuracy, easy transfer learning |
 | Limitations       | Large size, expensive to train from scratch                     |
 
-### 16. What is Sequence Labeling?
-#### 2. Named Entity Recognition (NER)
-Recognizes and classifies **named entities** (real-world objects) into predefined categories:
-#### 3. Chunking (Shallow Parsing)
-Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
-🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
+### 16. Gensim
+
 
 ### 17. OOV(Out-of-Vocabulary)Words
 #### 🧠 What Are OOV Words?
@@ -673,6 +674,7 @@ Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrase
         - **Medical NLP** (new drugs, diseases)
         - **Tech support bots** (new products)
         - **ChatGPT fine-tuned for company-specific terminology**
+
 ### 18. Machine Translation
 Machine translation is the process of automatically translating text or speech from one language to another using a computer or machine learning model.
 
@@ -737,6 +739,12 @@ NMT uses **deep learning models**, particularly **sequence-to-sequence architect
 
     - Sometimes hallucinates (outputs fluent but incorrect translations)
 
+### 19. What is Sequence Labeling?
+#### 2. Named Entity Recognition (NER)
+Recognizes and classifies **named entities** (real-world objects) into predefined categories:
+#### 3. Chunking (Shallow Parsing)
+Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
+🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
    
 ## 🧩 Python Dependencies
 

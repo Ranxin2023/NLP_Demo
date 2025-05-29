@@ -17,7 +17,7 @@ from demo_code.ML_in_NLP.ML_algorithms import ML_algorithms
 from demo_code.Word_Embeddings.word_embeddings import word_embedding_demo
 from demo_code.Sequence_Labelling.tagging_demo import tagging_demo
 from demo_code.Sequence_Labelling.semantic_role_labeling import SRL_demo
-from demo_code.ML_in_NLP.Transformer.transformer_demo import transfomer_datacamp
+from demo_code.Transformer.transformer_demo import transfomer_datacamp
 from demo_code.Word_Embeddings.word_embedding_algorithms import word_embeddings_algorithms
 from demo_code.NLPUtils.translation_demo import translation_demo
 from demo_code.NLPUtils.oov_demo import oov_demo

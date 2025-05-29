@@ -1,8 +1,8 @@
 from contextlib import redirect_stdout
-from demo_code.ML_in_NLP.Transformer.self_implementation import TransformerSentimentClassifier
-from demo_code.ML_in_NLP.Transformer.self_implementation import tokenizer
-from demo_code.ML_in_NLP.Transformer.self_implementation import vocab
-from demo_code.ML_in_NLP.Transformer.datacamp_tutorial import Transformer
+from demo_code.Transformer.self_implementation import TransformerSentimentClassifier
+from demo_code.Transformer.self_implementation import tokenizer
+from demo_code.Transformer.self_implementation import vocab
+from demo_code.Transformer.datacamp_tutorial import Transformer
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
