@@ -1,6 +1,6 @@
 from demo_code.ML_in_NLP.Naive_Bayes import Naive_Bayes_demo
 from demo_code.ML_in_NLP.SVM_demo import SVM_demo
-from demo_code.ML_in_NLP.Transformer.transformer_demo import transfomer_demo
+from demo_code.Transformer.transformer_demo import transfomer_demo
 from demo_code.ML_in_NLP.Decision_Tree import decision_tree_demo
 from contextlib import redirect_stdout
 def ML_algorithms():

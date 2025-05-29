@@ -25,6 +25,7 @@
 
 ## Intruduction
 This project is a hands-on demo of various Natural Language Processing (NLP) techniques, organized in modular Python scripts. It walks through fundamental concepts such as preprocessing, normalization, text classification, lemmatization, different NLP model approaches, and more.
+Before going with tutorial, I suggest to study pytorch first: [Pytorch Tutorial](https://github.com/Ranxin2023/PytorchDemo). 
 
 ## Project Structure
 ```graphql
@@ -493,6 +494,11 @@ After self-attention, each token's vector goes through a fully connected feedfor
 6. **Residual Connections + Layer Normalization**
 Each block includes skip connections (residuals) and layer normalization to stabilize training.
 
+### Questions:
+- 1. What is the purpose of the **multi-head attention mechanism** in Transformers?
+Multi-head attention means using **multiple self-attention layers (heads)** in parallel. Each head learns to focus on different aspects of the input — syntax, semantics, entity relationships, etc.
+
+- 2. 
 
 ### 14. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.

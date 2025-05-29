@@ -22,7 +22,7 @@ from demo_code.Word_Embeddings.word_embedding_algorithms import word_embeddings_
 from demo_code.NLPUtils.translation_demo import translation_demo
 from demo_code.NLPUtils.oov_demo import oov_demo
 from demo_code.NLPUtils.tokenization_demo import tokenization_demo
-
+from demo_code.Transformer.attention import attention_demo
 def main():
     # tokenization_demo()
     # nlp_challenges()
@@ -43,7 +43,8 @@ def main():
     # word_embeddings_algorithms()
     # translation_demo()
     # oov_demo()
-    tokenization_demo()
+    # tokenization_demo()
+    attention_demo()
     
 if __name__=='__main__':
     main()
