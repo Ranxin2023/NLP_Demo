@@ -15,11 +15,13 @@
     - [TF IDF](#11-what-is-tf-idf-in-nlp)
     - [Machine Learning Algorithms](#12-machine-learning-algorithms-used-in-nlp)
     - [Transformer](#13-transfomers)
+        - [Interview Questions](#interview-questions)
     - [Word Embeddings](#14-word-embeddings)
     - [BERT](#15-bert)
     - [OOV(out of words)](#17-oovout-of-vocabularywords)
     - [Machine Translation](#18-machine-translation)
     - [Sequence Labeling](#19-what-is-sequence-labeling)
+    - [Layer Norm and Batch Norm](#20-layernorm-vs-batch-norm)
 - [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
 
@@ -518,9 +520,21 @@ Each block includes skip connections (residuals) and layer normalization to stab
 
 #### Interview Questions:
 1. What is the purpose of the **multi-head attention mechanism** in Transformers?
-Multi-head attention means using **multiple self-attention layers (heads)** in parallel. Each head learns to focus on different aspects of the input — syntax, semantics, entity relationships, etc.
 
+Multi-head attention means using **multiple self-attention layers (heads)** in parallel. Each head learns to focus on different aspects of the input — syntax, semantics, entity relationships, etc.
+Code: 
+```python
+    Q = W_q(x)  # [B, T, D]
+    K = W_k(x)
+    V = W_v(x)
+```
+```python
+    Q = W_q(x).reshape(B, T, H, D_h).transpose(1, 2)  # [B, H, T, D_h]
+    K = W_k(x).reshape(B, T, H, D_h).transpose(1, 2)
+    V = W_v(x).reshape(B, T, H, D_h).transpose(1, 2)
+```
 2. Why do Q and K use different weight matrices? Why not just use the same input for dot product?
+
 Q (query) and K (key) play different semantic roles. Using the same weights removes asymmetry and reduces representational capacity. Dot product of the same vector (e.g., Q·Qᵀ) only captures self-similarity and lacks contextual interactions.
 
 3. Why does Transformer use multiplication (dot product) for attention instead of addition?
