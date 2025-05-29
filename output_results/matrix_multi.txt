@@ -1,0 +1,2 @@
+dot product attention: torch.Size([1, 4, 4])
+additive attention: torch.Size([1, 4, 4])

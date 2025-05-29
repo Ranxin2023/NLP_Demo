@@ -43,9 +43,10 @@ def attention_demo():
         output = output.transpose(1, 2).reshape(B, T, D)  # [B, T, D]
         return W_o(output), attn_weights
     
-    # Run both
     with open("./output_results/attention_demo.txt", "w", encoding="utf-8") as f:
         with redirect_stdout(f):
+            # Run both
+            print("attention of transformer......")
             single_output, single_weights = single_head_self_attention(x)
             multi_output, multi_weights = multi_head_attention(x, num_heads=num_heads)
             # Display results
@@ -69,3 +70,17 @@ def attention_demo():
             attn_layer0_head0 = attentions[0][0, 0]  # [T, T]
             print("BERT Layer 0 Head 0 Attention Weights:\n", attn_layer0_head0)
 
+    def dot_product_attention(Q, K):
+        return torch.matmul(Q, K.transpose(-2, -1)) / torch.sqrt(torch.tensor(Q.shape[-1], dtype=torch.float32))
+
+    def additive_attention(Q, K):
+        # suppose Q, K: [batch, seq_len, d_model]
+        Q_exp = Q.unsqueeze(2)  # [batch, seq_len_q, 1, d_model]
+        K_exp = K.unsqueeze(1)  # [batch, 1, seq_len_k, d_model]
+        return torch.tanh(Q_exp + K_exp).sum(dim=-1)
+    
+    Q = K = torch.rand(1, 4, 8)
+    with open("./output_results/matrix_multi.txt", "w", encoding="utf-8") as f:
+        with redirect_stdout(f):
+            print("dot product attention:", dot_product_attention(Q, K).shape)
+            print("additive attention:", additive_attention(Q, K).shape)
