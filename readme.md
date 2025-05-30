@@ -686,7 +686,27 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 | Limitations       | Large size, expensive to train from scratch                     |
 
 ### 16. Gensim
+#### 📦 What is Gensim?
+Gensim stands for **“Generate Similar”**. It is an open-source Python library developed by Radim Řehůřek and is used to process and analyze large-scale semantic textual data using unsupervised algorithms.
 
+#### ✅ Key Characteristics:
+- Efficient in handling **large corpora** (even bigger than memory)
+- Focused on **vector space modeling**, especially Word2Vec, Doc2Vec, and Topic Modeling
+- Supports **streaming** and **incremental training**
+
+#### 🎯 Main Purposes of Gensim
+- Learn word relationships: Word2Vec, FastText
+- Represent documents as vectors: Doc2Vec, TF-IDF, Bag-of-Words
+- Find topics in a corpus: LDA (Latent Dirichlet Allocation), HDP
+- Compute similarity between docs: Cosine similarity with vector models
+- Handle large-scale datasets: Memory-efficient streaming API
+
+####  Core Features and Algorithms
+- Bag-of-Words (BoW)
+- TF-IDF (Term Frequency–Inverse Document Frequency)
+- Word2Vec
+- Doc2Vec
+- Topic Modeling (LDA)
 
 ### 17. OOV(Out-of-Vocabulary)Words
 #### 🧠 What Are OOV Words?
