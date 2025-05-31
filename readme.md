@@ -536,15 +536,32 @@ Code:
     K = W_k(x).reshape(B, T, H, D_h).transpose(1, 2)
     V = W_v(x).reshape(B, T, H, D_h).transpose(1, 2)
 ```
+
 2. Why do Q and K use different weight matrices? Why not just use the same input for dot product?
 
 Q (query) and K (key) play different semantic roles. Using the same weights removes asymmetry and reduces representational capacity. Dot product of the same vector (e.g., Q·Qᵀ) only captures self-similarity and lacks contextual interactions.
 
 3. Why does Transformer use multiplication (dot product) for attention instead of addition?
+
 Dot product attention is computationally more efficient and parallelizable using matrix operations. Additive attention (used in RNNs) is harder to scale and slower. Dot product attention performs better with multi-head design on large datasets.
 
 4. Why do we scale the dot product by √dk before softmax?
+
 To prevent large dot product values from pushing the softmax into regions with small gradients, leading to vanishing updates. Scaling by √dk keeps the variance of the dot product stable and ensures effective learning.
+
+6. Why do we need to reduce the dimensionality for each head in multi-head attention?
+
+If we don’t reduce the dimensionality, the computation for each head will be too large.
+For example, if the input embedding size is 512 and we use 8 heads, assigning each head 512 dimensions would result in an output with 4096 dimensions — which is too large.
+
+So we usually set each head’s dimensionality to:
+
+$$
+\text{head\_dim} = \frac{d_{\text{model}}}{\text{num\_heads}}
+$$
+
+For instance, 512/8=64.
+After concatenation, we get back to the original 512 dimensions.
 
 13. What is BatchNorm? Advantages and disadvantages?
 
@@ -598,6 +615,24 @@ attention_output = self.cross_attention(x, enc_output, enc_output, src_mask)
 - The first attention sublayer in the decoder is Masked Multi-Head Self-Attention, which prevents information leakage from future tokens (auto-regressive modeling).
 
 - The second attention sublayer in the decoder is Cross-Attention, which integrates the information encoded by the encoder.
+
+19. What is the role of Dropout in Transformer? Where is it applied?
+- **Dropout** is a regularization technique used to prevent overfitting.
+- In Transformers, Dropout is applied at multiple locations:
+    - 1. After the attention output (before the residual connection)
+    - 2. After the feed-forward output
+    - 3. After embedding + positional encoding
+- Code implementation:
+```python
+self.dropout = nn.Dropout(dropout)
+
+# Applied after embedding
+src_embedded = self.dropout(self.position_encoding(self.encoder_embedding(src)))
+
+# Applied after attention and feed-forward
+x = self.norm1(x + self.dropout(attention_output))
+x = self.norm2(x + self.dropout(ff_output))
+```
 
 <!-- word embeddings -->
 ### 14. Word Embeddings
