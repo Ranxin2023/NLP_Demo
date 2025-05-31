@@ -638,6 +638,7 @@ This means they don't inherently understand the order of words.
 
 There are several ways to compute the position encoding:
 1. **Sinusoidal Positional Encoding** (from the original Transformer paper)
+Formulas:
 
 $$
 PE_{(pos,2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
