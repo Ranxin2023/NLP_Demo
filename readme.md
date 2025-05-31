@@ -501,7 +501,11 @@ The self-attention mechanism is the core of the Transformer architecture. It all
 
 Self-attention computes how much each word in a sentence should **attend to (focus on)** every other word — helping models understand context, dependencies, and meaning.
 For a word `𝑞`, self-attention is computed as:
-    Attention(q, k, v) = softmax((q · kᵀ) / √dₖ) · v
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right)V
+$$
+
 Where:
 - `q`, `k`, `v`: query, key, and value vectors
 - `dₖ`: dimension of keys (for scaling)
