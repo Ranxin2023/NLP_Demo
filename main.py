@@ -24,6 +24,7 @@ from demo_code.NLPUtils.oov_demo import oov_demo
 from demo_code.NLPUtils.tokenization_demo import tokenization_demo
 from demo_code.Transformer.attention import attention_demo
 from demo_code.Transformer.layer_norm_batch_norm import norm_demo
+from demo_code.Transformer.positional_encoding import position_encoding_demo
 def main():
     # tokenization_demo()
     # nlp_challenges()
@@ -46,7 +47,8 @@ def main():
     # oov_demo()
     # tokenization_demo()
     # attention_demo()
-    norm_demo()
+    # norm_demo()
+    position_encoding_demo()
     
 if __name__=='__main__':
     main()

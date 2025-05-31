@@ -1,6 +1,7 @@
 import torch
 import math
 import torch.nn as nn
+from contextlib import redirect_stdout
 
 def sinusoidal_positional_encoding(seq_len, d_model):
     pe = torch.zeros(seq_len, d_model)
@@ -45,7 +46,13 @@ def apply_rope(x, seq_len):
     x_rotated = torch.cat([x1 * cos - x2 * sin, x1 * sin + x2 * cos], dim=-1)
     return x_rotated
 
-# Example: [batch, seq_len, dim]
-x = torch.randn(1, 6, 16)
-x_rope = apply_rope(x, seq_len=6)
-print("RoPE Applied:\n", x_rope)
+
+def position_encoding_demo():
+    with open("./output_results/position_encoding_demo.txt", "w", encoding="utf-8") as f:
+        with redirect_stdout(f):
+            # rope
+            # Example: [batch, seq_len, dim]
+            print("rope demo......")
+            x = torch.randn(1, 6, 16)
+            x_rope = apply_rope(x, seq_len=6)
+            print("RoPE Applied:\n", x_rope)

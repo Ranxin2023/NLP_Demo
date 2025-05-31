@@ -17,11 +17,13 @@
     - [Transformer](#13-transfomers)
         - [Interview Questions](#interview-questions)
     - [Word Embeddings](#14-word-embeddings)
-    - [BERT](#15-bert)
-    - [OOV(out of words)](#17-oovout-of-vocabularywords)
-    - [Machine Translation](#18-machine-translation)
-    - [Sequence Labeling](#19-what-is-sequence-labeling)
-    - [Layer Norm and Batch Norm](#20-layernorm-vs-batch-norm)
+    - [Position Encoding](#15-positional-encoding)
+    - [BERT](#16-bert)
+    - [Gensim](#17-gensim)
+    - [OOV(out of words)](#18-oovout-of-vocabularywords)
+    - [Machine Translation](#19-machine-translation)
+    - [Sequence Labeling](#20-what-is-sequence-labeling)
+    - [Layer Norm and Batch Norm](#21-layernorm-vs-batch-norm)
 - [Python Dependencies](#python-dependencies)
 - [Setup](#setup)
 
@@ -487,6 +489,7 @@ Each word is converted into a dense vector using an `nn.Embedding` layer.
 2. **Positional Encoding**
 Since Transformers don't have sequence order by default, positional encodings (sinusoidal functions) are added to the embeddings to represent the position of each token in the sentence.
 $PE(pos, i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d_{model}}}}\right)$
+
 3. **Self-Attention**
 The self-attention mechanism is the core of the Transformer architecture. It allows the model to weigh the importance of different words in a sequence when encoding each word — enabling the model to understand context from surrounding tokens.
 
@@ -568,7 +571,7 @@ $$
 
 - The second attention sublayer in the decoder is Cross-Attention, which integrates the information encoded by the encoder.
 
-
+<!-- word embeddings -->
 ### 14. Word Embeddings
 Word embeddings are **dense vector representations** of words in a continuous space, where semantically or syntactically similar words are placed closer together. Unlike one-hot encoding or BoW (Bag of Words), embeddings capture contextual relationships and meaning.
 
@@ -606,6 +609,7 @@ A shallow neural network that learns word associations based on local context in
 - **CBOW**(Continuous Bag of Words): Predicts a target word from its surrounding context.
 - **Skip-gram**: Predicts surrounding words from a target word.
                 These embeddings are **static** (same vector regardless of sentence).
+
 2. **GloVe (Global Vectors)**:
 Constructs word embeddings by factoring a word co-occurrence matrix across the entire corpus. It captures **global statistical information** and produces **static embeddings** like word2vec, but based on overall co-occurrence patterns.
 - **FastText**: Extends word2vec by including subword (character n-gram) information to better handle rare and misspelled words.
@@ -619,23 +623,61 @@ Constructs word embeddings by factoring a word co-occurrence matrix across the e
 
 #### 📦 Tools Used
 - `gensim` for pretrained embedding loading.
-
 - `contextlib.redirect_stdout` to write output to a file.
-
 - `redirect_stderr` to silence progress bar clutter.
 
-### 15. BERT
-#### 15.1 🧠 What is BERT?
+<!-- positional encoding -->
+### 15. Positional Encoding
+
+#### 📦 What Is Positional Encoding?
+**Positional Encoding** gives each token a sense of its position in the sequence.
+This means they **don't inherently understand the order** of words.
+#### 🔍 Why Do We Need Positional Encoding?
+Transformers process input **in parallel**, not sequentially like RNNs.
+This means they don't inherently understand the order of words.
+
+There are several ways to compute the position encoding:
+1. **Sinusoidal Positional Encoding** (from the original Transformer paper)
+
+PE(pos, 2i)   = sin(pos / 10000^(2i / d_model))  
+PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
+
+- `pos` is the position (0 to max_seq_len)
+- `i` is the dimension index
+- `d_model` is the embedding size
+
+2. **Learnable Positional Embedding**
+Instead of using sin/cos, we just define a **trainable embedding matrix**:
+PositionEmbedding=Embedding(position_id)
+
+3. **Relative Positional Encoding**
+Used in models like **Transformer-XL**, **T5**, **DeBERTa**.
+Instead of absolute position (like “I'm token 4”), it encodes the **relative distance between tokens**:
+"How far is token A from token B?"
+This allows better generalization for tasks like translation, where relative structure is more important than absolute positions.
+
+4. **Rotary Positional Embedding (RoPE)**— Used in GPT-3.5/GPT-4
+- **Intuition:**
+    - Rotate each query/key vector by an angle proportional to its position
+    - Let attention be implicitly aware of position differences
+
+- **Benefits:**
+    - Injects **relative and absolute** position info into attention
+    - More efficient for long contexts
+    - Better generalization to longer sequences
+    
+### 16. BERT
+#### 16.1 🧠 What is BERT?
 BERT (Bidirectional Encoder Representations from Transformers) is a **pretrained language model** developed by Google in 2018. 
 It is based on the **Transformer encoder architecture** and is trained to understand the **context of a word in a sentence by looking both left and right (bidirectional)**.
 
-#### 15.2 📌 Key Characteristics of BERT:
+#### 16.2 📌 Key Characteristics of BERT:
 - 1. **Only uses the Transformer encoder** (not the decoder)
 - 2. **Pretrained on a massive text corpus** (Wikipedia + BookCorpus)
 - 3. **Fine-tunable** on downstream tasks: sentiment analysis, question answering, NER, etc.
 - 4. Uses **[MASK]** token to train via **Masked Language Modeling (MLM)**
 
-#### 15.3 ⚙️ How BERT Works – Step by Step
+#### 16.3 ⚙️ How BERT Works – Step by Step
 - 1. **Transformer Encoder Architecture**:
 BERT uses only the **encoder part** of the Transformer (from the original "Attention is All You Need" paper). The encoder focuses on capturing contextual relationships between words in a sentence.
 - 2. **Bidirectional Attention**:
@@ -674,7 +716,7 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 
         - Fine-tune entire model + new head using task-specific labeled data.
 
-#### 🔍 15.3 Summary Table
+#### 🔍 16.4 Summary Table
 | Component         | Details                                                         |
 | ----------------- | --------------------------------------------------------------- |
 | Architecture      | Transformer Encoder (only)                                      |
@@ -685,7 +727,7 @@ This enables BERT to **understand context deeply**, especially for polysemous wo
 | Strengths         | Deep context, state-of-the-art accuracy, easy transfer learning |
 | Limitations       | Large size, expensive to train from scratch                     |
 
-### 16. Gensim
+### 17. Gensim
 #### 📦 What is Gensim?
 Gensim stands for **“Generate Similar”**. It is an open-source Python library developed by Radim Řehůřek and is used to process and analyze large-scale semantic textual data using unsupervised algorithms.
 
@@ -708,7 +750,7 @@ Gensim stands for **“Generate Similar”**. It is an open-source Python librar
 - Doc2Vec
 - Topic Modeling (LDA)
 
-### 17. OOV(Out-of-Vocabulary)Words
+### 18. OOV(Out-of-Vocabulary)Words
 #### 🧠 What Are OOV Words?
 #### ✅ Techniques to Handle OOV Words
 - **Character-Level Models**:
@@ -770,7 +812,7 @@ Gensim stands for **“Generate Similar”**. It is an open-source Python librar
         - **Tech support bots** (new products)
         - **ChatGPT fine-tuned for company-specific terminology**
 
-### 18. Machine Translation
+### 19. Machine Translation
 Machine translation is the process of automatically translating text or speech from one language to another using a computer or machine learning model.
 
 There are three techniques for machine translation:
@@ -834,14 +876,14 @@ NMT uses **deep learning models**, particularly **sequence-to-sequence architect
 
     - Sometimes hallucinates (outputs fluent but incorrect translations)
 
-### 19. What is Sequence Labeling?
+### 20. What is Sequence Labeling?
 #### 2. Named Entity Recognition (NER)
 Recognizes and classifies **named entities** (real-world objects) into predefined categories:
 #### 3. Chunking (Shallow Parsing)
 Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
 🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
 
-### 20. LayerNorm VS Batch Norm
+### 21. LayerNorm VS Batch Norm
 #### Definition
 - **Batch Normalization** is a technique that normalizes the inputs of a layer across the batch dimension, i.e., for each feature independently across all examples in a batch. It stabilizes and accelerates training by reducing internal covariate shift.
 - **Layer Normalization** normalizes the inputs across all features in a single sample. Unlike BatchNorm, it does not depend on the batch and works well for sequential and language data.
