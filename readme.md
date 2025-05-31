@@ -647,10 +647,12 @@ PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
 - `d_model` is the embedding size
 
 2. **Learnable Positional Embedding**
+
 Instead of using sin/cos, we just define a **trainable embedding matrix**:
 PositionEmbedding=Embedding(position_id)
 
 3. **Relative Positional Encoding**
+
 Used in models like **Transformer-XL**, **T5**, **DeBERTa**.
 Instead of absolute position (like “I'm token 4”), it encodes the **relative distance between tokens**:
 "How far is token A from token B?"
@@ -665,7 +667,7 @@ This allows better generalization for tasks like translation, where relative str
     - Injects **relative and absolute** position info into attention
     - More efficient for long contexts
     - Better generalization to longer sequences
-    
+
 ### 16. BERT
 #### 16.1 🧠 What is BERT?
 BERT (Bidirectional Encoder Representations from Transformers) is a **pretrained language model** developed by Google in 2018. 
