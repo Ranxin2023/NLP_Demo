@@ -547,6 +547,7 @@ Dot product attention is computationally more efficient and parallelizable using
 To prevent large dot product values from pushing the softmax into regions with small gradients, leading to vanishing updates. Scaling by √dk keeps the variance of the dot product stable and ensures effective learning.
 
 13. What is BatchNorm? Advantages and disadvantages?
+
 - **BatchNorm** normalizes each feature (each column) across a batch of inputs:
 $$
 \hat{x} = \frac{x - \mu_{\text{batch}}}{\sqrt{\sigma^2_{\text{batch}} + \epsilon}}
@@ -559,7 +560,34 @@ $$
     - Poor at handling long sequences
     - Requires fixed statistics during inference, which affects models that need to adapt dynamically
 
+14. Briefly describe the feed-forward network in Transformer. What activation function is used? What are its pros and cons?
+
+- Each Transformer layer contains a feed-forward sublayer (FFN):
+$$
+\text{FFN}(x) = \text{Linear}(x) \rightarrow \text{ReLU} \rightarrow \text{Linear}(x)
+$$
+- **Function**: Applies a non-linear transformation independently at each position, giving the model a stronger feature transformation capability.
+- **Activation function**: Usually ReLU is used, though some models use GELU.
+
+✅ Pros and Cons:
+- **Pros**: Non-linearity enhances the expressive power of the model.
+- **Cons**: ReLU outputs zero in the negative range, which may cause gradient vanishing in some cases.
+
+15. How do the Encoder and Decoder interact with each other?
+- The Decoder contains a **cross-attention layer** that allows it to "see" the Encoder's output.
+- **Inputs**:
+    - **Query** comes from the Decoder itself
+    - **Key** and **Value** come from the Encoder’s output
+- This enables the decoder to build connections between the input and output sequences.
+
+```python
+attention_output = self.cross_attention(x, enc_output, enc_output, src_mask)
+```
+- `enc_output` is the output from the Encoder, serving as K and V, and is integrated into the Decoder.
+- This completes the `Encoder → Decoder` information bridging interaction.
+
 16. What’s the difference between encoder and decoder attention in Transformer?
+
 | Module        | Source of Q / K / V                                                         | Type                  |
 | ------------- | --------------------------------------------------------------------------- | --------------------- |
 | **Encoder**   | Q, K, V all come from the encoder input (self-attention)                    | Self-Attention        |
