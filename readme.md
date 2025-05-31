@@ -638,11 +638,13 @@ This means they don't inherently understand the order of words.
 
 There are several ways to compute the position encoding:
 1. **Sinusoidal Positional Encoding** (from the original Transformer paper)
+
 Formulas:
 
 $$
 PE_{(pos,2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
-
+$$
+$$
 PE_{(pos,2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 $$
 - `pos` is the position (0 to max_seq_len)
@@ -666,7 +668,7 @@ Each position has a corresponding learnable vector, like word embeddings.
 
 Used in models like **Transformer-XL**, **T5**, **DeBERTa**.
 Instead of absolute position (like “I'm token 4”), it encodes the **relative distance between tokens**:
-"How far is token A from token B?"
+`"How far is token A from token B?"`
 This allows better generalization for tasks like translation, where relative structure is more important than absolute positions.
 
 4. **Rotary Positional Embedding (RoPE)**— Used in GPT-3.5/GPT-4
