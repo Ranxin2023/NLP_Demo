@@ -639,8 +639,11 @@ This means they don't inherently understand the order of words.
 There are several ways to compute the position encoding:
 1. **Sinusoidal Positional Encoding** (from the original Transformer paper)
 $$
-PE(pos, 2i)   = sin(pos / 10000^(2i / d_model))  
-PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
+PE_{(pos,2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
+$$
+
+$$
+PE_{(pos,2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 $$
 - `pos` is the position (0 to max_seq_len)
 - `i` is the dimension index
@@ -650,7 +653,7 @@ $$
 
 Instead of using sin/cos, we just define a **trainable embedding matrix**:
 $$
-PositionEmbedding=Embedding(position_id)
+\text{PositionEmbedding} = \text{Embedding(position\_id)}
 $$
 Each position has a corresponding learnable vector, like word embeddings.
 
