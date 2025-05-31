@@ -14,7 +14,13 @@
     - [Parsing in NLP](#10-what-are-the-different-types-of-parsing-in-nlp)
     - [TF IDF](#11-what-is-tf-idf-in-nlp)
     - [Machine Learning Algorithms](#12-machine-learning-algorithms-used-in-nlp)
+        - [Naive Bayes](#naive-bayes)
+        - [SVM](#support-vector-machines-svm)
+        - [Decision Trees](#decision-trees)
+        - [Random Forest](#random-forests)
     - [Transformer](#13-transfomers)
+        - [What is Transformer](#what-is-transformer-in-nlp)
+        - [Transformer Key Features](#-key-features-of-transformer)
         - [Interview Questions](#interview-questions)
     - [Word Embeddings](#14-word-embeddings)
     - [Position Encoding](#15-positional-encoding)
@@ -522,6 +528,7 @@ Each block includes skip connections (residuals) and layer normalization to stab
 | **DistilBERT** | Compressed BERT | Faster inference           |
 
 #### Interview Questions:
+
 1. What is the purpose of the **multi-head attention mechanism** in Transformers?
 
 Multi-head attention means using **multiple self-attention layers (heads)** in parallel. Each head learns to focus on different aspects of the input — syntax, semantics, entity relationships, etc.
