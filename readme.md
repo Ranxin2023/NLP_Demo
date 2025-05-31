@@ -638,10 +638,10 @@ This means they don't inherently understand the order of words.
 
 There are several ways to compute the position encoding:
 1. **Sinusoidal Positional Encoding** (from the original Transformer paper)
-
+$$
 PE(pos, 2i)   = sin(pos / 10000^(2i / d_model))  
 PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
-
+$$
 - `pos` is the position (0 to max_seq_len)
 - `i` is the dimension index
 - `d_model` is the embedding size
@@ -649,7 +649,15 @@ PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
 2. **Learnable Positional Embedding**
 
 Instead of using sin/cos, we just define a **trainable embedding matrix**:
+$$
 PositionEmbedding=Embedding(position_id)
+$$
+Each position has a corresponding learnable vector, like word embeddings.
+
+📈 **Properties**:
+- Flexible, task-adaptive
+- Requires learning
+- **Doesn't generalize** to longer sequences than seen during training
 
 3. **Relative Positional Encoding**
 
@@ -661,7 +669,7 @@ This allows better generalization for tasks like translation, where relative str
 4. **Rotary Positional Embedding (RoPE)**— Used in GPT-3.5/GPT-4
 - **Intuition:**
     - Rotate each query/key vector by an angle proportional to its position
-    - Let attention be implicitly aware of position differences
+    - Let attention be **implicitly aware of position differences**
 
 - **Benefits:**
     - Injects **relative and absolute** position info into attention
