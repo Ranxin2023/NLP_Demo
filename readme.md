@@ -654,9 +654,11 @@ $$
 2. **Learnable Positional Embedding**
 
 Instead of using sin/cos, we just define a **trainable embedding matrix**:
+
 $$
 \text{PositionEmbedding} = \text{Embedding(position\_id)}
 $$
+
 Each position has a corresponding learnable vector, like word embeddings.
 
 📈 **Properties**:
