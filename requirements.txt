@@ -10,6 +10,7 @@ scikit-learn==1.4.2   # For TfidfVectorizer
 pandas==2.2.2         # For displaying and sorting TF-IDF results
 gensim==4.3.2
 scipy==1.12.0
+tensorflow==2.16.1           # Add TensorFlow for deep learning tasks
 # allennlp
 
 # For GloVe (used via gensim.downloader)

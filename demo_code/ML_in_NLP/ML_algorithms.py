@@ -3,6 +3,7 @@ from demo_code.ML_in_NLP.SVM_demo import SVM_demo
 # from demo_code.Transformer.transformer_demo import transfomer_demo
 from demo_code.ML_in_NLP.Decision_Tree import decision_tree_demo
 from demo_code.ML_in_NLP.Random_Forest import random_forest_demo
+from demo_code.ML_in_NLP.LSTM import lstm_demo
 from contextlib import redirect_stdout
 def ML_algorithms():
     with open("./output_results/ML_demo.txt", "w", encoding="utf-8") as f:
@@ -12,3 +13,5 @@ def ML_algorithms():
             decision_tree_demo()
             # transfomer_demo()
             random_forest_demo()
+            lstm_demo()
+            
