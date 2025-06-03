@@ -18,6 +18,8 @@
         - [SVM](#support-vector-machines-svm)
         - [Decision Trees](#decision-trees)
         - [Random Forest](#random-forests)
+        - [RNN](#rnn)
+        - [LSTM](#lstm)
     - [Transformer](#13-transfomers)
         - [What is Transformer](#what-is-transformer-in-nlp)
         - [Transformer Key Features](#-key-features-of-transformer)
@@ -28,6 +30,9 @@
     - [Gensim](#17-gensim)
     - [OOV(out of words)](#18-oovout-of-vocabularywords)
     - [Machine Translation](#19-machine-translation)
+        - [RBMT](#1-rule-based-machine-translation-rbmt)
+        - [SMT](#2-statistical-machine-translation-smt)
+        - [NMT](#-3-neural-machine-translation-nmt)
     - [Sequence Labeling](#20-what-is-sequence-labeling)
     - [Layer Norm and Batch Norm](#21-layernorm-vs-batch-norm)
 - [Python Dependencies](#python-dependencies)
@@ -1000,12 +1005,51 @@ NMT uses **deep learning models**, particularly **sequence-to-sequence architect
 
     - Sometimes hallucinates (outputs fluent but incorrect translations)
 
-### 20. What is Sequence Labeling?
-#### 2. Named Entity Recognition (NER)
+### 20. Sequence Labeling
+
+#### What is Sequence Labeling?
+**Sequence labeling** is a core NLP task where each element (usually a word or token) in a sequence is assigned a label. These labels represent things like part-of-speech tags, named entity types, or chunk roles.
+
+#### 📌 Sequence Labeling Tasks Explained
+1. **Part-of-Speech Tagging (POS)**
+Assigns grammatical labels to words such as:
+- **NN** = Noun
+- **VB** = Verb
+- **JJ** = Adjective
+- **DT** = Determiner
+🔹 **Purpose**: Helps understand sentence structure and grammar.
+🔸 **Example**:
+```text
+"The quick brown fox"  
+→ [('The', 'DT'), ('quick', 'JJ'), ('brown', 'JJ'), ('fox', 'NN')]
+```
+2. **Named Entity Recognition (NER)**
 Recognizes and classifies **named entities** (real-world objects) into predefined categories:
-#### 3. Chunking (Shallow Parsing)
+- `PERSON` (e.g., Barack Obama)
+- `ORG` (e.g., Google)
+- `GPE` (Geopolitical Entity, e.g., France)
+- `DATE`, `TIME`, `MONEY`...
+🔹 Purpose: Extracts real-world facts and entities from text.
+
+3. **Chunking (Shallow Parsing)**
 Groups words into syntactic "chunks" like **noun phrases (NP)** or **verb phrases (VP)**.
 🔹 **Purpose**: Captures structure between words (e.g., “The quick brown fox” = NP).
+🔸 **Grammar rule example**:
+```python
+NP: {<DT>?<JJ>*<NN>}  # determiner + adjectives + noun
+```
+
+4. **Semantic Role Labeling (SRL)**:
+Identifies **who did what to whom, when, where, and how** in a sentence.
+🔹 **Purpose**: Captures deep meaning and semantic roles like:
+    - **ARG0** → Agent (who is acting)
+    - **ARG1** → Theme (what is being affected)
+    - **ARGM-TMP** → Temporal modifier
+
+5. **Speech Tagging (from speech signals)**:
+Used in **speech recognition**, labels segments of audio into phonemes, syllables, or word units.
+🔹 **Tools**: Speech tagging is more common in audio NLP using models like DeepSpeech or Whisper.
+
 
 ### 21. LayerNorm VS Batch Norm
 #### Definition
