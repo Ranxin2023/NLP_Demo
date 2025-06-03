@@ -56,6 +56,120 @@ Tree rules are:
 |   |--- class: 0
 
 [0]
-Transfomer demo....
-Input Sentense isI love using transformers for NLP
-Sentiment: POSITIVE, Confidence: 0.6594
+Random Forest Demo......
+
+🧪 Test Vector:
+[[0 0 1 0 1 1 1]]
+
+🔍 Individual Tree Predictions:
+Tree 1: Negative
+Tree 2: Negative
+Tree 3: Positive
+Tree 4: Positive
+Tree 5: Positive
+Tree 6: Positive
+Tree 7: Negative
+Tree 8: Positive
+Tree 9: Positive
+Tree 10: Positive
+Tree 11: Negative
+Tree 12: Negative
+Tree 13: Positive
+Tree 14: Negative
+Tree 15: Positive
+Tree 16: Negative
+Tree 17: Positive
+Tree 18: Positive
+Tree 19: Negative
+Tree 20: Negative
+Tree 21: Positive
+Tree 22: Positive
+Tree 23: Positive
+Tree 24: Positive
+Tree 25: Positive
+Tree 26: Positive
+Tree 27: Positive
+Tree 28: Negative
+Tree 29: Positive
+Tree 30: Positive
+Tree 31: Negative
+Tree 32: Negative
+Tree 33: Negative
+Tree 34: Positive
+Tree 35: Negative
+Tree 36: Negative
+Tree 37: Positive
+Tree 38: Negative
+Tree 39: Positive
+Tree 40: Positive
+Tree 41: Positive
+Tree 42: Positive
+Tree 43: Positive
+Tree 44: Negative
+Tree 45: Negative
+Tree 46: Positive
+Tree 47: Negative
+Tree 48: Negative
+Tree 49: Negative
+Tree 50: Negative
+Tree 51: Negative
+Tree 52: Positive
+Tree 53: Negative
+Tree 54: Positive
+Tree 55: Positive
+Tree 56: Negative
+Tree 57: Positive
+Tree 58: Positive
+Tree 59: Positive
+Tree 60: Positive
+Tree 61: Negative
+Tree 62: Positive
+Tree 63: Positive
+Tree 64: Negative
+Tree 65: Positive
+Tree 66: Negative
+Tree 67: Negative
+Tree 68: Negative
+Tree 69: Negative
+Tree 70: Negative
+Tree 71: Negative
+Tree 72: Positive
+Tree 73: Negative
+Tree 74: Negative
+Tree 75: Positive
+Tree 76: Positive
+Tree 77: Positive
+Tree 78: Positive
+Tree 79: Positive
+Tree 80: Positive
+Tree 81: Negative
+Tree 82: Negative
+Tree 83: Negative
+Tree 84: Negative
+Tree 85: Negative
+Tree 86: Positive
+Tree 87: Positive
+Tree 88: Negative
+Tree 89: Negative
+Tree 90: Negative
+Tree 91: Positive
+Tree 92: Positive
+Tree 93: Positive
+Tree 94: Positive
+Tree 95: Negative
+Tree 96: Positive
+Tree 97: Negative
+Tree 98: Negative
+Tree 99: Negative
+Tree 100: Positive
+
+✅ Final Random Forest Prediction: Positive
+
+📈 Feature Importances:
+spam: 0.3218
+nlp: 0.2669
+bad: 0.1105
+hate: 0.1034
+love: 0.0773
+amazing: 0.0651
+is: 0.0549

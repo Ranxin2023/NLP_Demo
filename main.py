@@ -37,7 +37,7 @@ def main():
     # parsing_demo()
     # bow_demo()
     # tf_idf()
-    # ML_algorithms()
+    ML_algorithms()
     # word_embedding_demo()
     # tagging_demo()
     # SRL_demo()
@@ -48,7 +48,7 @@ def main():
     # tokenization_demo()
     # attention_demo()
     # norm_demo()
-    position_encoding_demo()
+    # position_encoding_demo()
     
 if __name__=='__main__':
     main()

@@ -416,7 +416,7 @@ Words that appear often in a document but rarely elsewhere get a high score.
 
 #### Naive Bayes
 - **Type**: Probabilistic classifier based on Bayes' Theorem.
-- How it works: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
+- **How it works**: Assumes features (like words) are independent. Calculates the probability that a given text belongs to a class (like spam or not spam).
 - **Common Use**: Text classification, spam detection, sentiment analysis.
 - **Pros**:
     - Simple to implement and interpret
@@ -471,6 +471,39 @@ Words that appear often in a document but rarely elsewhere get a high score.
 - **How it works**: Builds multiple decision trees and averages their results to improve accuracy and reduce overfitting.
 - **Common Use**: Named entity recognition, sentiment classification.
 - **Pros**: More accurate and stable than a single decision tree.
+
+#### RNN
+- **Type**: Neural Network for Sequential data labeling.
+- **How it works**: Maintain a hidden state that carries information across time steps, allowing it to learn temporal dependencies in sequences. 
+- **Common Use**:
+    - Text generation
+    - sentiment analysis
+    - part-of-speech tagging
+    - sequence labeling. 
+- **✅ Pros**: 
+    - Remembers previous context using hidden states.
+    - Suitable for variable-length sequences.
+    - Lightweight compared to other deep sequential models.
+- **❌ Cons**:
+    - Struggles with long-range dependencies due to vanishing gradients.
+    - Training can be slow and unstable.
+    - Cannot parallelize sequence computations (unlike transformers).
+
+#### LSTM:
+- **Type**: A special kind of RNN designed to remember long-term dependencies. 
+- **How it works**: Uses gates(input, forget, output) to control the flow of information over times, preserving relevant signals and forget irrelevant ones. 
+- **Common Use**: 
+    - Named Entity Recognition (NER)
+    - machine translation
+    - speech recognition.
+- **✅ Pros**:
+    - Effectively handles long-term dependencies.
+    - More stable gradients compared to vanilla RNNs.
+    - Works well even on longer documents or sentence chains.
+- **❌ Cons**:
+    - More complex and slower than RNNs.
+    - Requires more training data and computation.
+    - Still sequential in nature (less efficient than transformers for large-scale data).
 
 #### Transfomer
 - **Type**: Attention-based deep learning architecture.
